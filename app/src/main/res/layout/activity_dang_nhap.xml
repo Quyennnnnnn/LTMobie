@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#F5F7FA"
+    tools:context=".UI.DangNhap">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng Nhập"
+        android:textColor="#1A1A1A"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Nhập Email -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTaiKhoan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:hintTextColor="#757575"
+        app:boxStrokeColor="#E0E0E0"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtTaiKhoan"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Số điện thoại hoặc Email"
+            android:inputType="textEmailAddress"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nhập Mật khẩu -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMatKhau"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintTextColor="#757575"
+        app:boxStrokeColor="#E0E0E0"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilTaiKhoan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtMatKhau"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:padding="12dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nút Đăng Nhập -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="32dp"
+        android:text="Đăng Nhập"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="12dp"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilMatKhau"/>
+
+    <!-- Liên kết Đăng ký & Quên mật khẩu -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin">
+
+        <TextView
+            android:id="@+id/txtDangKy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng ký"
+            android:textColor="#3F51B5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingEnd="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <TextView
+            android:id="@+id/txtQuenMK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quên mật khẩu?"
+            android:textColor="#3F51B5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

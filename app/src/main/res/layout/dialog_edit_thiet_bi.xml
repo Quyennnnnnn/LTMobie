@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm thiết bị"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMaThietBi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="#757575"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtMaThietBi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mã thiết bị"
+                android:textSize="14sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilTenThietBi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:hintTextColor="#757575"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilMaThietBi">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtTenThietBi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tên thiết bị"
+                android:textSize="14sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilXuatXu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:hintTextColor="#757575"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilTenThietBi">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtXuatXu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Xuất xứ"
+                android:textSize="14sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSoLuong"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:hintTextColor="#757575"
+            app:boxBackgroundMode="outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilXuatXu">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtSoLuong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Số lượng"
+                android:inputType="number"
+                android:textSize="14sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinnerLoaiThietBi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSoLuong"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:text="Lưu"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="8dp"
+            android:backgroundTint="#3F51B5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerLoaiThietBi"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
