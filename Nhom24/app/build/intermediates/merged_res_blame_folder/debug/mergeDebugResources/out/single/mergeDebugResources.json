@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxxhdpi_image_thietbi_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxxhdpi/image_thietbi_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/drawable_search_background.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/drawable/search_background.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_home.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_nhan_vien.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_nhan_vien.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_dialog_edit_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/dialog_edit_thiet_bi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xhdpi_image_thietbi_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xhdpi/image_thietbi_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_thiet_bi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_chi_tiet_su_dung.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_chi_tiet_su_dung.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-hdpi_image_thietbi.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-hdpi/image_thietbi.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_dialog_edit_loai_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/dialog_edit_loai_thiet_bi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_settings.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxhdpi_image_thietbi_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxhdpi/image_thietbi_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxxhdpi_image_thietbi.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxxhdpi/image_thietbi.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_dang_nhap.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_dang_nhap.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxhdpi_image_thietbi.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxhdpi/image_thietbi.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_loai_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_loai_thiet_bi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_thong_ke.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_thong_ke.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-mdpi_image_thietbi.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-mdpi/image_thietbi.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xhdpi_image_thietbi.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xhdpi/image_thietbi.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-anydpi-v26_image_thietbi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-anydpi-v26/image_thietbi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-anydpi-v26_image_thietbi_round.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-anydpi-v26/image_thietbi_round.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_item_loai_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/item_loai_thiet_bi.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-mdpi_image_thietbi_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-mdpi/image_thietbi_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-hdpi_image_thietbi_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-hdpi/image_thietbi_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/xml_backup_rules.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/drawable_image_thietbi_background.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/drawable/image_thietbi_background.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_dang_ky.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_dang_ky.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/drawable_image_thietbi_foreground.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/drawable/image_thietbi_foreground.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_main.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_phong_hoc.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_phong_hoc.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.nhom24.app-main-39:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_item_thiet_bi.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/item_thiet_bi.xml"
+    }
+]

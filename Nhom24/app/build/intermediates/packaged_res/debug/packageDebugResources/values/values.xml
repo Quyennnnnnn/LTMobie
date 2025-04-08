@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Nhom24</string>
+    <style name="Base.Theme.Nhom24" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="Theme.Nhom24" parent="Base.Theme.Nhom24"/>
+</resources>
