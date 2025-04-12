@@ -2,11 +2,18 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable gradient_background
+drawable gradient_background_appbar
+drawable gradient_background_card
+drawable ic_delete
+drawable ic_edit
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image_thietbi_background
 drawable image_thietbi_foreground
 drawable search_background
+drawable wave_background
+id appBarLayout
 id btnBack
 id btnChiTietSuDung
 id btnDelete
@@ -22,6 +29,7 @@ id btnSave
 id btnSettings
 id btnThietBi
 id btnThongKe
+id customHeader
 id edtConfirmPassword
 id edtEmail
 id edtMaThietBi
@@ -56,7 +64,6 @@ id tvSoLuong
 id tvTenLoaiThietBi
 id tvTenThietBi
 id tvTitle
-id tvXuatXu
 id txtDangKy
 id txtQuenMK
 layout activity_chi_tiet_su_dung

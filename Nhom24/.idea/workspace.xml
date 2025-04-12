@@ -86,7 +86,114 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f6e3e54-c32b-442f-bce3-5a8850e27801" name="Changes" comment="" />
+    <list default="true" id="0f6e3e54-c32b-442f-bce3-5a8850e27801" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_appbar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_card.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/wave_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/androidTest/java/com/example/testlogin/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/image_thietbi-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/DangKy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/DatabaseHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/PasswordUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/QuenMk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/java/com/example/testlogin/ThietBi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/bg_button_footer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/bg_footer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/custom_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/customs_button_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/customs_edttext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/customs_seach.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_back.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_eye.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_lock.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_seach.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/ic_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/drawable/image_thietbi_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/layout/activity_dang_ky.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/layout/activity_home.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/layout/activity_quen_mk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/layout/activity_thiet_bi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-anydpi-v26/image_thietbi_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-hdpi/image_thietbi.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-hdpi/image_thietbi_foreground.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-hdpi/image_thietbi_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/image_aaaa.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/image_thietbi.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/image_thietbi_foreground.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-mdpi/image_thietbi_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/image_aaaa.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/image_thietbi.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/image_thietbi_foreground.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xhdpi/image_thietbi_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/image_aaaa.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/image_thietbi.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/image_thietbi_foreground.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxhdpi/image_thietbi_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/image_aaaa.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/image_thietbi.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/image_thietbi_foreground.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/mipmap-xxxhdpi/image_thietbi_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/app/src/test/java/com/example/testlogin/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLogin/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_nhap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_nhap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_loai_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_loai_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_loai_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_loai_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_thiet_bi.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,16 +212,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="resourceFile" />
         <option value="Interface" />
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2vQqn7Gi0fLmpYwOmSs6GhcpOIN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -128,10 +238,16 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ADMIN/Nhom24/app/src/main/res/drawable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\drawable" />
+      <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\values" />
+    </key>
     <key name="android.template.-1055555594">
       <recent name="com.example.nhom24.UI" />
       <recent name="com.example.nhom24.Adapter" />
@@ -226,12 +342,12 @@
       <map>
         <entry key="com.example.nhom24">
           <value>
-            <CheckInfo lastCheckTimestamp="1744088378267" />
+            <CheckInfo lastCheckTimestamp="1744447588766" />
           </value>
         </entry>
         <entry key="com.example.nhom24.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1744088378269" />
+            <CheckInfo lastCheckTimestamp="1744447588767" />
           </value>
         </entry>
       </map>
