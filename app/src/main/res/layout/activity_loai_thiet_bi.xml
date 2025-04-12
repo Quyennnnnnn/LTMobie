@@ -26,6 +26,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:background="#47169D"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 
@@ -37,14 +38,15 @@
                     android:src="@android:drawable/ic_menu_revert"
                     android:contentDescription="Back"
                     android:padding="8dp"
-                    android:tint="#212121"/>
+                    />
 
                 <!-- Tiêu đề -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Loại thiết bị"
-                    android:textColor="#212121"
+                    android:textColor="@color/white"
+
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginEnd="16dp"/>
@@ -67,15 +69,17 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- RecyclerView cho danh sách loại thiết bị -->
+
+    <!-- Nút Thêm (Floating Action Button) -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewLoaiThietBi"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="wrap_content"
+        android:background="#704AB3"
         android:padding="8dp"
-        tools:listitem="@layout/item_loai_thiet_bi"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_loai_thiet_bi" />
 
-    <!-- Nút Thêm (Floating Action Button) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
@@ -84,7 +88,7 @@
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_add"
         android:contentDescription="Thêm loại thiết bị"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="#299D2D"
         app:tint="#FFFFFF"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

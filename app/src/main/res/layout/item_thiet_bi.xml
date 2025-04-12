@@ -5,65 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content" android:background="#47169D"
+
+        android:padding="12dp">
 
         <!-- Mã thiết bị -->
         <TextView
             android:id="@+id/tvMaThietBi"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="(TB001)"
-            android:textColor="#757575"
+            android:textColor="@color/white"
             android:textSize="14sp"
             android:ellipsize="end"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- Tên thiết bị -->
         <TextView
             android:id="@+id/tvTenThietBi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:text="Tên thiết bị"
-            android:textColor="#212121"
-            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:ellipsize="end"
-            android:maxLines="1"/>
-
-        <!-- Xuất xứ -->
-        <TextView
-            android:id="@+id/tvXuatXu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Xuất xứ: Việt Nam"
-            android:textColor="#757575"
-            android:textSize="14sp"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/tvMaThietBi"
+            app:layout_constraintEnd_toStartOf="@id/tvSoLuong"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- Số lượng -->
         <TextView
             android:id="@+id/tvSoLuong"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="SL: 10"
-            android:textColor="#757575"
+            android:textColor="@color/white"
             android:textSize="14sp"
-            android:gravity="center"
             android:ellipsize="end"
-            android:maxLines="1"/>
+            android:maxLines="1"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/tvTenThietBi"
+            app:layout_constraintEnd_toStartOf="@id/btnEdit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- Nút Sửa -->
         <ImageButton
@@ -73,8 +70,13 @@
             android:src="@android:drawable/ic_menu_edit"
             android:contentDescription="Sửa"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="#3F51B5"
-            android:layout_marginEnd="4dp"/>
+            android:tint="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toEndOf="@id/tvSoLuong"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <!-- Nút Xóa -->
         <ImageButton
@@ -84,6 +86,10 @@
             android:src="@android:drawable/ic_menu_delete"
             android:contentDescription="Xóa"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="#F44336"/>
-    </LinearLayout>
+            android:tint="#F44336"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

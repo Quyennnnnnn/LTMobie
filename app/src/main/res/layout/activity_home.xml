@@ -5,62 +5,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FA"
+    android:background="@drawable/gradient_background"
     tools:context=".UI.Home">
 
     <!-- AppBarLayout cho Header -->
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="@drawable/gradient_background"
         android:elevation="4dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <LinearLayout
+            android:id="@+id/customHeader"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:contentInsetStart="0dp">
+            android:layout_height="56dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp">
+            <!-- Icon Menu -->
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Menu"
+                android:padding="8dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:tint="#FFFFFF"/>
 
-                <!-- Icon Menu -->
-                <ImageView
-                    android:id="@+id/btnMenu"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@android:drawable/ic_menu_sort_by_size"
-                    android:contentDescription="Menu"
-                    android:padding="8dp"
-                    android:tint="#212121"/>
+            <!-- Tiêu đề -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Quản lý thiết bị"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
-                <!-- Tiêu đề -->
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Quản lý thiết bị"
-                    android:textColor="#212121"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
-
-                <!-- Avatar -->
-                <ImageView
-                    android:id="@+id/imgProfile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@android:drawable/ic_menu_camera"
-                    android:contentDescription="Profile"
-                    android:padding="8dp"
-                    app:shapeAppearanceOverlay="@style/CircleImage"/>
-            </LinearLayout>
-        </androidx.appcompat.widget.Toolbar>
+            <!-- Avatar -->
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Profile"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/ic_menu_camera"
+                android:tint="#FFFFFF"/>
+        </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <!-- Nội dung chính -->
@@ -79,14 +76,18 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/gradient_background_card"
                 app:cardCornerRadius="12dp"
+                android:layout_marginTop="50dp"
                 app:cardElevation="4dp"
                 android:layout_marginBottom="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:orientation="vertical"
+                    android:background="@drawable/gradient_background"
                     android:padding="8dp">
 
                     <!-- Hàng 1 -->
@@ -105,11 +106,17 @@
                             android:layout_marginEnd="8dp"
                             android:text="Loại thiết bị"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_manage"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"/>
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnThietBi"
@@ -119,17 +126,25 @@
                             android:layout_weight="1"
                             android:text="Thiết bị"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_camera"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"
+                            />
                     </LinearLayout>
 
                     <!-- Hàng 2 -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+
                         android:orientation="horizontal"
                         android:padding="8dp">
 
@@ -142,11 +157,18 @@
                             android:layout_marginEnd="8dp"
                             android:text="Chi tiết"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_info_details"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"
+                           />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnPhongHoc"
@@ -156,11 +178,18 @@
                             android:layout_weight="1"
                             android:text="Phòng học"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_myplaces"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"
+                           />
                     </LinearLayout>
 
                     <!-- Hàng 3 -->
@@ -179,11 +208,18 @@
                             android:layout_marginEnd="8dp"
                             android:text="Nhân viên"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_my_calendar"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"
+                           />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnThongKe"
@@ -193,11 +229,18 @@
                             android:layout_weight="1"
                             android:text="Thống kê"
                             android:textSize="16sp"
-                            android:textColor="#212121"
-
+                            android:textColor="#FFFFFF"
+                            android:backgroundTint="#4A148C"
+                            app:icon="@android:drawable/ic_menu_report_image"
+                            app:iconTint="#FFFFFF"
+                            app:strokeColor="#FFFFFF"
+                            app:strokeWidth="1dp"
                             app:iconGravity="top"
                             app:iconPadding="8dp"
-                            app:cornerRadius="8dp"/>
+                            app:iconSize="32dp"
+                            app:cornerRadius="8dp"
+                            app:rippleColor="#AB47BC"
+                           />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -211,7 +254,7 @@
         android:layout_gravity="bottom"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/gradient_background"
         android:elevation="8dp">
 
         <com.google.android.material.button.MaterialButton

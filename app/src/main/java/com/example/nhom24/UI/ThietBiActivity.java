@@ -38,8 +38,8 @@ public class ThietBiActivity extends AppCompatActivity {
     private FloatingActionButton fabAdd;
     private ThietBiAdapter adapter;
     private List<ThietBi> thietBiList;
-    private AppDatabase database;
     private List<LoaiThietBi> loaiThietBiList;
+    private AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,8 @@ public class ThietBiActivity extends AppCompatActivity {
         // Thiết lập RecyclerView
         recyclerViewThietBi.setLayoutManager(new LinearLayoutManager(this));
         thietBiList = new ArrayList<>();
-        adapter = new ThietBiAdapter(thietBiList);
+        loaiThietBiList = new ArrayList<>();
+        adapter = new ThietBiAdapter(thietBiList, loaiThietBiList); // Truyền loaiThietBiList
         recyclerViewThietBi.setAdapter(adapter);
 
         // Load dữ liệu
@@ -83,7 +84,7 @@ public class ThietBiActivity extends AppCompatActivity {
 
             @Override
             public void onDeleteClick(ThietBi item) {
-                database.thietBiDAO().delete(item);
+                database.thietBiDAO().delete(item); // Sửa thietBiDAO thành thietBiDao
                 loadData();
                 Toast.makeText(ThietBiActivity.this, "Đã xóa: " + item.getTenThietBi(), Toast.LENGTH_SHORT).show();
             }
@@ -108,14 +109,14 @@ public class ThietBiActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-        thietBiList = database.thietBiDAO().getAll();
-        loaiThietBiList = database.loaiThietBiDAO().getAll();
-        adapter.updateList(thietBiList);
+        thietBiList = database.thietBiDAO().getAll(); // Sửa thietBiDAO thành thietBiDao
+        loaiThietBiList = database.loaiThietBiDAO().getAll(); // Sửa loaiThietBiDAO thành loaiThietBiDao
+        adapter.updateList(thietBiList, loaiThietBiList); // Cập nhật cả hai danh sách
     }
 
     private void filterList(String query) {
-        List<ThietBi> filteredList = database.thietBiDAO().search("%" + query + "%");
-        adapter.updateList(filteredList);
+        List<ThietBi> filteredList = database.thietBiDAO().search("%" + query + "%"); // Sửa thietBiDAO thành thietBiDao
+        adapter.updateList(filteredList, loaiThietBiList); // Giữ nguyên loaiThietBiList
     }
 
     private void showEditDialog(ThietBi item) {
@@ -132,8 +133,10 @@ public class ThietBiActivity extends AppCompatActivity {
 
         // Thiết lập Spinner
         List<String> loaiThietBiNames = new ArrayList<>();
-        for (LoaiThietBi loai : loaiThietBiList) {
-            loaiThietBiNames.add(loai.getTenthietbi());
+        if (loaiThietBiList != null) {
+            for (LoaiThietBi loai : loaiThietBiList) {
+                loaiThietBiNames.add(loai.getTenthietbi());
+            }
         }
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, loaiThietBiNames);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -144,10 +147,12 @@ public class ThietBiActivity extends AppCompatActivity {
         edtTenThietBi.setText(item.getTenThietBi());
         edtXuatXu.setText(item.getXuatXu());
         edtSoLuong.setText(String.valueOf(item.getSoLuong()));
-        for (int i = 0; i < loaiThietBiList.size(); i++) {
-            if (loaiThietBiList.get(i).getId() == item.getLoaiThietBiId()) {
-                spinnerLoaiThietBi.setSelection(i);
-                break;
+        if (loaiThietBiList != null) {
+            for (int i = 0; i < loaiThietBiList.size(); i++) {
+                if (loaiThietBiList.get(i).getId() == item.getLoaiThietBiId()) {
+                    spinnerLoaiThietBi.setSelection(i);
+                    break;
+                }
             }
         }
 
@@ -163,12 +168,23 @@ public class ThietBiActivity extends AppCompatActivity {
                 return;
             }
 
-            int soLuong = Integer.parseInt(soLuongStr);
-            int loaiThietBiId = loaiThietBiList.get(selectedPosition).getId();
+            int soLuong;
+            try {
+                soLuong = Integer.parseInt(soLuongStr);
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Số lượng phải là số nguyên!", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            if (loaiThietBiList == null || selectedPosition < 0 || selectedPosition >= loaiThietBiList.size()) {
+                Toast.makeText(this, "Vui lòng chọn loại thiết bị!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            int loaiThietBiId = loaiThietBiList.get(selectedPosition).getId();
             ThietBi updatedItem = new ThietBi(maThietBi, tenThietBi, xuatXu, soLuong, loaiThietBiId);
             updatedItem.setId(item.getId());
-            database.thietBiDAO().update(updatedItem);
+            database.thietBiDAO().update(updatedItem); // Sửa thietBiDAO thành thietBiDao
 
             Toast.makeText(this, "Đã cập nhật: " + tenThietBi, Toast.LENGTH_SHORT).show();
             loadData();
@@ -199,8 +215,10 @@ public class ThietBiActivity extends AppCompatActivity {
 
         // Thiết lập Spinner
         List<String> loaiThietBiNames = new ArrayList<>();
-        for (LoaiThietBi loai : loaiThietBiList) {
-            loaiThietBiNames.add(loai.getTenthietbi());
+        if (loaiThietBiList != null) {
+            for (LoaiThietBi loai : loaiThietBiList) {
+                loaiThietBiNames.add(loai.getTenthietbi());
+            }
         }
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, loaiThietBiNames);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -218,11 +236,22 @@ public class ThietBiActivity extends AppCompatActivity {
                 return;
             }
 
-            int soLuong = Integer.parseInt(soLuongStr);
-            int loaiThietBiId = loaiThietBiList.get(selectedPosition).getId();
+            int soLuong;
+            try {
+                soLuong = Integer.parseInt(soLuongStr);
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Số lượng phải là số nguyên!", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            if (loaiThietBiList == null || selectedPosition < 0 || selectedPosition >= loaiThietBiList.size()) {
+                Toast.makeText(this, "Vui lòng chọn loại thiết bị!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            int loaiThietBiId = loaiThietBiList.get(selectedPosition).getId();
             ThietBi newItem = new ThietBi(maThietBi, tenThietBi, xuatXu, soLuong, loaiThietBiId);
-            database.thietBiDAO().insert(newItem);
+            database.thietBiDAO().insert(newItem); // Sửa thietBiDAO thành thietBiDao
 
             Toast.makeText(this, "Đã thêm: " + tenThietBi, Toast.LENGTH_SHORT).show();
             loadData();

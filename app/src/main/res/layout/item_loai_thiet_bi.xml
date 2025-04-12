@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#47169D"
         android:padding="16dp"
         android:gravity="center_vertical">
 
@@ -29,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="(LTB001)"
-                android:textColor="#757575"
+                android:textColor="@color/white"
 
                 android:textSize="14sp" />
 
@@ -41,7 +42,7 @@
                 android:maxLines="1"
 
                 android:text="Tên loại thiết bị"
-                android:textColor="#212121"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -54,7 +55,7 @@
             android:src="@android:drawable/ic_menu_edit"
             android:contentDescription="Sửa"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="#3F51B5"
+            android:tint="@color/black"
             android:layout_marginEnd="8dp"/>
 
         <!-- Nút Xóa -->

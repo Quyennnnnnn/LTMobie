@@ -30,9 +30,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         // Ánh xạ các view từ layout
-        toolbar = findViewById(R.id.toolbar);
-        btnMenu = findViewById(R.id.btnMenu);
-        imgProfile = findViewById(R.id.imgProfile);
+//        toolbar = findViewById(R.id.toolbar);
+//        btnMenu = findViewById(R.id.btnMenu);
+//        imgProfile = findViewById(R.id.imgProfile);
         btnLoaiThietBi = findViewById(R.id.btnLoaiThietBi);
         btnThietBi = findViewById(R.id.btnThietBi);
         btnChiTietSuDung = findViewById(R.id.btnChiTietSuDung);
@@ -43,29 +43,29 @@ public class Home extends AppCompatActivity {
         btnLogout = findViewById(R.id.btnLogout);
 
         // Thiết lập Toolbar
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayShowTitleEnabled(false); // Ẩn tiêu đề mặc định của Toolbar
-        }
-
-        // Xử lý sự kiện cho nút Menu (có thể mở Navigation Drawer)
-        btnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Home.this, "Mở menu (chưa triển khai)", Toast.LENGTH_SHORT).show();
-                // Nếu dùng Navigation Drawer, thêm code mở Drawer ở đây
-            }
-        });
-
-        // Xử lý sự kiện cho Avatar
-        imgProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Home.this, "Mở hồ sơ (chưa triển khai)", Toast.LENGTH_SHORT).show();
-                // Có thể mở ProfileActivity ở đây
-                // startActivity(new Intent(Home.this, ProfileActivity.class));
-            }
-        });
+//        setSupportActionBar(toolbar);
+//        if (getSupportActionBar() != null) {
+//            getSupportActionBar().setDisplayShowTitleEnabled(false); // Ẩn tiêu đề mặc định của Toolbar
+//        }
+//
+//        // Xử lý sự kiện cho nút Menu (có thể mở Navigation Drawer)
+//        btnMenu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(Home.this, "Mở menu (chưa triển khai)", Toast.LENGTH_SHORT).show();
+//                // Nếu dùng Navigation Drawer, thêm code mở Drawer ở đây
+//            }
+//        });
+//
+//        // Xử lý sự kiện cho Avatar
+//        imgProfile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(Home.this, "Mở hồ sơ (chưa triển khai)", Toast.LENGTH_SHORT).show();
+//                // Có thể mở ProfileActivity ở đây
+//                // startActivity(new Intent(Home.this, ProfileActivity.class));
+//            }
+//        });
 
         // Xử lý sự kiện cho các nút chức năng
         btnLoaiThietBi.setOnClickListener(new View.OnClickListener() {
@@ -128,10 +128,10 @@ public class Home extends AppCompatActivity {
         });
 
         // Xử lý padding cho system bars
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.toolbar), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.toolbar), (v, insets) -> {
+//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+//            return insets;
+//        });
     }
 }
