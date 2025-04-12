@@ -13,6 +13,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import com.example.nhom24.DAO.LoaiThietBiDAO;
 import com.example.nhom24.DAO.LoaiThietBiDAO_Impl;
+import com.example.nhom24.DAO.ThietBiDAO;
+import com.example.nhom24.DAO.ThietBiDAO_Impl;
 import com.example.nhom24.DAO.UserDAO;
 import com.example.nhom24.DAO.UserDAO_Impl;
 import java.lang.Class;
@@ -45,9 +47,9 @@ public final class AppDatabase_Impl extends AppDatabase {
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `user` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phone` TEXT, `email` TEXT, `password` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `loaithietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mathietbi` TEXT, `tenthietbi` TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `thietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maThietBi` TEXT, `tenThietBi` TEXT, `xuatXu` TEXT, `soLuong` INTEGER NOT NULL, `loaiThietBiId` INTEGER NOT NULL, FOREIGN KEY(`loaiThietBiId`) REFERENCES `loaithietbi`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `thietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maThietBi` TEXT, `tenThietBi` TEXT, `xuatXu` TEXT, `soLuong` INTEGER NOT NULL, `tinhTrang` TEXT, `imageUrl` TEXT, `loaiThietBiId` INTEGER NOT NULL, FOREIGN KEY(`loaiThietBiId`) REFERENCES `loaithietbi`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e5ce5650d5a62f6a1374a0f6c1465b73')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7bff662e660a98cf22a84ffd45bd4010')");
       }
 
       @Override
@@ -126,12 +128,14 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoLoaithietbi + "\n"
                   + " Found:\n" + _existingLoaithietbi);
         }
-        final HashMap<String, TableInfo.Column> _columnsThietbi = new HashMap<String, TableInfo.Column>(6);
+        final HashMap<String, TableInfo.Column> _columnsThietbi = new HashMap<String, TableInfo.Column>(8);
         _columnsThietbi.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsThietbi.put("maThietBi", new TableInfo.Column("maThietBi", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsThietbi.put("tenThietBi", new TableInfo.Column("tenThietBi", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsThietbi.put("xuatXu", new TableInfo.Column("xuatXu", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsThietbi.put("soLuong", new TableInfo.Column("soLuong", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsThietbi.put("tinhTrang", new TableInfo.Column("tinhTrang", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsThietbi.put("imageUrl", new TableInfo.Column("imageUrl", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsThietbi.put("loaiThietBiId", new TableInfo.Column("loaiThietBiId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysThietbi = new HashSet<TableInfo.ForeignKey>(1);
         _foreignKeysThietbi.add(new TableInfo.ForeignKey("loaithietbi", "CASCADE", "NO ACTION", Arrays.asList("loaiThietBiId"), Arrays.asList("id")));
@@ -145,7 +149,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "e5ce5650d5a62f6a1374a0f6c1465b73", "a40a9ef014e6ec3bcfa81f30255cd5d7");
+    }, "7bff662e660a98cf22a84ffd45bd4010", "2ed502dca1675f03f999ae4d2f03800e");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

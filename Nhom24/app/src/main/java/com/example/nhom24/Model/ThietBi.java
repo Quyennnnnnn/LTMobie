@@ -16,13 +16,18 @@ public class ThietBi {
     private String tenThietBi;
     private String xuatXu;
     private int soLuong;
+    private String tinhTrang;
+    private String imageUrl;
     private int loaiThietBiId; // Khóa ngoại tham chiếu đến LoaiThietBi
 
-    public ThietBi(String maThietBi, String tenThietBi, String xuatXu, int soLuong, int loaiThietBiId) {
+    public ThietBi(int id, String maThietBi, String tenThietBi, String xuatXu, int soLuong, String tinhTrang, String imageUrl, int loaiThietBiId) {
+        this.id = id;
         this.maThietBi = maThietBi;
         this.tenThietBi = tenThietBi;
         this.xuatXu = xuatXu;
         this.soLuong = soLuong;
+        this.tinhTrang = tinhTrang;
+        this.imageUrl = imageUrl;
         this.loaiThietBiId = loaiThietBiId;
     }
 
@@ -32,6 +37,22 @@ public class ThietBi {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public void setTinhTrang(String tinhTrang) {
+        this.tinhTrang = tinhTrang;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getMaThietBi() {

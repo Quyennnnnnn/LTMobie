@@ -1,4 +1,4 @@
-package com.example.nhom24.Database;
+package com.example.nhom24.DAO;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

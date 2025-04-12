@@ -5,6 +5,7 @@ color white
 drawable gradient_background
 drawable gradient_background_appbar
 drawable gradient_background_card
+drawable ic_camera
 drawable ic_delete
 drawable ic_edit
 drawable ic_launcher_background
@@ -16,6 +17,8 @@ drawable wave_background
 id appBarLayout
 id btnBack
 id btnChiTietSuDung
+id btnChonHinh
+id btnClose
 id btnDelete
 id btnEdit
 id btnLoaiThietBi
@@ -40,10 +43,13 @@ id edtSearch
 id edtSoLuong
 id edtTaiKhoan
 id edtTenThietBi
+id edtTinhTrang
 id edtXuatXu
 id fabAdd
 id imgProfile
+id imgThietBi
 id main
+id popupImageView
 id recyclerViewLoaiThietBi
 id recyclerViewThietBi
 id spinnerLoaiThietBi
@@ -56,14 +62,18 @@ id tilPhone
 id tilSoLuong
 id tilTaiKhoan
 id tilTenThietBi
+id tilTinhTrang
 id tilXuatXu
 id toolbar
+id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaThietBi
 id tvSoLuong
 id tvTenLoaiThietBi
 id tvTenThietBi
+id tvTinhTrang
 id tvTitle
+id tvXuatXu
 id txtDangKy
 id txtQuenMK
 layout activity_chi_tiet_su_dung
@@ -79,6 +89,7 @@ layout activity_thiet_bi
 layout activity_thong_ke
 layout dialog_edit_loai_thiet_bi
 layout dialog_edit_thiet_bi
+layout dialog_fullscreen_image
 layout item_loai_thiet_bi
 layout item_thiet_bi
 mipmap ic_launcher

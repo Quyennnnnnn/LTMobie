@@ -70,6 +70,11 @@
           <theme>@style/Theme.Nhom24</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_fullscreen_image.xml">
+        <config>
+          <theme>@style/Theme.Nhom24</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_loai_thiet_bi.xml">
         <config>
           <theme>@style/Theme.Nhom24</theme>
@@ -91,6 +96,7 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_appbar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_card.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/wave_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_fullscreen_image.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestLogin/.gitignore" beforeDir="false" />
@@ -182,7 +188,9 @@
       <change beforePath="$PROJECT_DIR$/TestLogin/gradlew.bat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TestLogin/settings.gradle.kts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" afterDir="false" />
@@ -213,9 +221,9 @@
       <list>
         <option value="valueResourceFile" />
         <option value="Interface" />
-        <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -236,11 +244,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "ScreenshotViewer.SavePath": "C:/Users/ADMIN/Nhom24",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Nhom24/app/src/main/res/drawable"
+    "last_opened_file_path": "C:/Users/ADMIN/Nhom24"
   }
 }]]></component>
   <component name="RecentsManager">

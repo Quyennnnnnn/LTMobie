@@ -3022,6 +3022,7 @@ drawable ic_call_answer_video
 drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
+drawable ic_camera
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
@@ -3221,6 +3222,8 @@ id bounceEnd
 id bounceStart
 id btnBack
 id btnChiTietSuDung
+id btnChonHinh
+id btnClose
 id btnDelete
 id btnEdit
 id btnLoaiThietBi
@@ -3320,6 +3323,7 @@ id edtSearch
 id edtSoLuong
 id edtTaiKhoan
 id edtTenThietBi
+id edtTinhTrang
 id edtXuatXu
 id elastic
 id embed
@@ -3373,6 +3377,7 @@ id ignore
 id ignoreRequest
 id image
 id imgProfile
+id imgThietBi
 id immediateStop
 id included
 id indeterminate
@@ -3506,6 +3511,7 @@ id peekHeight
 id percent
 id pin
 id pooling_container_listener_holder_tag
+id popupImageView
 id position
 id postLayout
 id pressed
@@ -3625,6 +3631,7 @@ id tilPhone
 id tilSoLuong
 id tilTaiKhoan
 id tilTenThietBi
+id tilTinhTrang
 id tilXuatXu
 id time
 id title
@@ -3646,12 +3653,15 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaThietBi
 id tvSoLuong
 id tvTenLoaiThietBi
 id tvTenThietBi
+id tvTinhTrang
 id tvTitle
+id tvXuatXu
 id txtDangKy
 id txtQuenMK
 id unchecked
@@ -3822,6 +3832,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialog_edit_loai_thiet_bi
 layout dialog_edit_thiet_bi
+layout dialog_fullscreen_image
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_loai_thiet_bi

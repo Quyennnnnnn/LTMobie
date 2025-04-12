@@ -1,14 +1,17 @@
 package com.example.nhom24.Adapter;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.nhom24.Model.LoaiThietBi;
 import com.example.nhom24.Model.ThietBi;
 import com.example.nhom24.R;
@@ -20,55 +23,73 @@ public class ThietBiAdapter extends RecyclerView.Adapter<ThietBiAdapter.ViewHold
     private List<ThietBi> thietBiList;
     private List<LoaiThietBi> loaiThietBiList;
     private OnItemClickListener listener;
-
-    public ThietBiAdapter(List<ThietBi> thietBiList, List<LoaiThietBi> loaiThietBiList) {
-        this.thietBiList = thietBiList;
-        this.loaiThietBiList = loaiThietBiList;
-    }
+    private final OnImageClickListener imageClickListener;
 
     public interface OnItemClickListener {
         void onEditClick(ThietBi item);
         void onDeleteClick(ThietBi item);
     }
 
+    public interface OnImageClickListener {
+        void onImageClick(String imageUrl);
+    }
+
+    public ThietBiAdapter(List<ThietBi> thietBiList, List<LoaiThietBi> loaiThietBiList, OnImageClickListener imageClickListener) {
+        this.thietBiList = thietBiList;
+        this.loaiThietBiList = loaiThietBiList;
+        this.imageClickListener = imageClickListener;
+    }
+
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
+    }
+
+    public void updateList(List<ThietBi> thietBiList, List<LoaiThietBi> loaiThietBiList) {
+        this.thietBiList = thietBiList;
+        this.loaiThietBiList = loaiThietBiList;
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_thiet_bi, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_thiet_bi, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ThietBi item = thietBiList.get(position);
-        holder.tvMaThietBi.setText("(" + item.getMaThietBi() + ")");
-        holder.tvTenThietBi.setText(item.getTenThietBi());
-      //  holder.tvXuatXu.setText("Xuất xứ: " + item.getXuatXu());
-        holder.tvSoLuong.setText("SL: " + item.getSoLuong());
+        ThietBi thietBi = thietBiList.get(position);
+        holder.tvMaThietBi.setText(thietBi.getMaThietBi());
+        holder.tvTenThietBi.setText(thietBi.getTenThietBi());
+        holder.tvXuatXu.setText("Xuất xứ: " + thietBi.getXuatXu());
+        holder.tvTinhTrang.setText("Tình trạng: " + thietBi.getTinhTrang());
+        holder.tvSoLuong.setText("SL: " + thietBi.getSoLuong());
 
-        // Hiển thị tên loại thiết bị
-//        String loaiThietBiName = "Không xác định";
-//        if (loaiThietBiList != null) {
-//            for (LoaiThietBi loai : loaiThietBiList) {
-//                if (loai.getId() == item.getLoaiThietBiId()) {
-//                    loaiThietBiName = loai.getTenthietbi();
-//                    break;
-//                }
-//            }
-//        }
-//        holder.tvLoaiThietBi.setText("Loại: " + loaiThietBiName);
+        // Load image
+        if (thietBi.getImageUrl() != null && !thietBi.getImageUrl().isEmpty()) {
+            Glide.with(holder.itemView.getContext())
+                    .load(Uri.parse(thietBi.getImageUrl()))
+                    .error(R.drawable.ic_camera) // Replace with your custom camera icon
+                    .placeholder(R.drawable.ic_camera)
+                    .into(holder.imgThietBi);
+        } else {
+            holder.imgThietBi.setImageResource(R.drawable.ic_camera);
+        }
 
-        holder.btnEdit.setOnClickListener(v -> {
-            if (listener != null) listener.onEditClick(item);
+        // Image click listener
+        holder.imgThietBi.setOnClickListener(v -> {
+            if (imageClickListener != null) {
+                imageClickListener.onImageClick(thietBi.getImageUrl());
+            }
         });
 
+        // Edit and delete listeners
+        holder.btnEdit.setOnClickListener(v -> {
+            if (listener != null) listener.onEditClick(thietBi);
+        });
         holder.btnDelete.setOnClickListener(v -> {
-            if (listener != null) listener.onDeleteClick(item);
+            if (listener != null) listener.onDeleteClick(thietBi);
         });
     }
 
@@ -77,23 +98,19 @@ public class ThietBiAdapter extends RecyclerView.Adapter<ThietBiAdapter.ViewHold
         return thietBiList.size();
     }
 
-    public void updateList(List<ThietBi> newList, List<LoaiThietBi> newLoaiThietBiList) {
-        this.thietBiList = newList;
-        this.loaiThietBiList = newLoaiThietBiList;
-        notifyDataSetChanged();
-    }
-
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvMaThietBi, tvTenThietBi, tvXuatXu, tvSoLuong, tvLoaiThietBi;
+        TextView tvMaThietBi, tvTenThietBi, tvXuatXu, tvTinhTrang, tvSoLuong;
+        ImageView imgThietBi;
         ImageButton btnEdit, btnDelete;
 
-        ViewHolder(View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvMaThietBi = itemView.findViewById(R.id.tvMaThietBi);
             tvTenThietBi = itemView.findViewById(R.id.tvTenThietBi);
-//            tvXuatXu = itemView.findViewById(R.id.tvXuatXu);
+            tvXuatXu = itemView.findViewById(R.id.tvXuatXu);
+            tvTinhTrang = itemView.findViewById(R.id.tvTinhTrang);
             tvSoLuong = itemView.findViewById(R.id.tvSoLuong);
-//            tvLoaiThietBi = itemView.findViewById(R.id.tvLoaiThietBi);
+            imgThietBi = itemView.findViewById(R.id.imgThietBi);
             btnEdit = itemView.findViewById(R.id.btnEdit);
             btnDelete = itemView.findViewById(R.id.btnDelete);
         }

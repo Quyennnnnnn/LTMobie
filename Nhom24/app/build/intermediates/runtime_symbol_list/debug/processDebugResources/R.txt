@@ -3021,6 +3021,7 @@ int drawable ic_call_answer_video 0x7f07008e
 int drawable ic_call_answer_video_low 0x7f07008f
 int drawable ic_call_decline 0x7f070090
 int drawable ic_call_decline_low 0x7f070091
+int drawable ic_camera 0x7f0700f1
 int drawable ic_clear_black_24 0x7f070092
 int drawable ic_clock_black_24dp 0x7f070093
 int drawable ic_delete 0x7f070094
@@ -3220,6 +3221,8 @@ int id bounceEnd 0x7f080063
 int id bounceStart 0x7f080064
 int id btnBack 0x7f080065
 int id btnChiTietSuDung 0x7f080066
+int id btnChonHinh 0x7f080232
+int id btnClose 0x7f080239
 int id btnDelete 0x7f080067
 int id btnEdit 0x7f080068
 int id btnLoaiThietBi 0x7f080069
@@ -3319,6 +3322,7 @@ int id edtSearch 0x7f0800c5
 int id edtSoLuong 0x7f0800c6
 int id edtTaiKhoan 0x7f0800c7
 int id edtTenThietBi 0x7f0800c8
+int id edtTinhTrang 0x7f080233
 int id edtXuatXu 0x7f0800c9
 int id elastic 0x7f0800ca
 int id embed 0x7f0800cb
@@ -3372,6 +3376,7 @@ int id ignore 0x7f0800fa
 int id ignoreRequest 0x7f0800fb
 int id image 0x7f0800fc
 int id imgProfile 0x7f0800fd
+int id imgThietBi 0x7f080234
 int id immediateStop 0x7f0800fe
 int id included 0x7f0800ff
 int id indeterminate 0x7f080100
@@ -3505,6 +3510,7 @@ int id peekHeight 0x7f08017f
 int id percent 0x7f080180
 int id pin 0x7f080181
 int id pooling_container_listener_holder_tag 0x7f080182
+int id popupImageView 0x7f08023b
 int id position 0x7f080183
 int id postLayout 0x7f080184
 int id pressed 0x7f080185
@@ -3624,6 +3630,7 @@ int id tilPhone 0x7f0801f6
 int id tilSoLuong 0x7f0801f7
 int id tilTaiKhoan 0x7f0801f8
 int id tilTenThietBi 0x7f0801f9
+int id tilTinhTrang 0x7f080235
 int id tilXuatXu 0x7f0801fa
 int id time 0x7f0801fb
 int id title 0x7f0801fc
@@ -3645,12 +3652,15 @@ int id transition_position 0x7f08020b
 int id transition_scene_layoutid_cache 0x7f08020c
 int id transition_transform 0x7f08020d
 int id triangle 0x7f08020e
+int id tvLoaiThietBi 0x7f080236
 int id tvMaLoaiThietBi 0x7f08020f
 int id tvMaThietBi 0x7f080210
 int id tvSoLuong 0x7f080211
 int id tvTenLoaiThietBi 0x7f080212
 int id tvTenThietBi 0x7f080213
+int id tvTinhTrang 0x7f080237
 int id tvTitle 0x7f080214
+int id tvXuatXu 0x7f080238
 int id txtDangKy 0x7f080215
 int id txtQuenMK 0x7f080216
 int id unchecked 0x7f080217
@@ -3821,6 +3831,7 @@ int layout design_text_input_end_icon 0x7f0b0035
 int layout design_text_input_start_icon 0x7f0b0036
 int layout dialog_edit_loai_thiet_bi 0x7f0b0037
 int layout dialog_edit_thiet_bi 0x7f0b0038
+int layout dialog_fullscreen_image 0x7f0b007a
 int layout ime_base_split_test_activity 0x7f0b0039
 int layout ime_secondary_split_test_activity 0x7f0b003a
 int layout item_loai_thiet_bi 0x7f0b003b
