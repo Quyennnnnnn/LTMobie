@@ -19,7 +19,7 @@ import com.example.nhom24.Model.User;
 
 @Database(entities = {User.class, LoaiThietBi.class, ThietBi.class, PhongHoc.class, ChiTietSuDung.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
-    private static final String DATABASE_NAME = "app4.db";
+    private static final String DATABASE_NAME = "app5.db";
     private static AppDatabase instance;
 
     public static synchronized AppDatabase getInstance(Context context)
