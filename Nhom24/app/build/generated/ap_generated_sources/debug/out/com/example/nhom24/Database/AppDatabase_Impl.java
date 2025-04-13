@@ -11,8 +11,12 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import com.example.nhom24.DAO.ChiTietSuDungDAO;
+import com.example.nhom24.DAO.ChiTietSuDungDAO_Impl;
 import com.example.nhom24.DAO.LoaiThietBiDAO;
 import com.example.nhom24.DAO.LoaiThietBiDAO_Impl;
+import com.example.nhom24.DAO.PhongHocDAO;
+import com.example.nhom24.DAO.PhongHocDAO_Impl;
 import com.example.nhom24.DAO.ThietBiDAO;
 import com.example.nhom24.DAO.ThietBiDAO_Impl;
 import com.example.nhom24.DAO.UserDAO;
@@ -39,6 +43,10 @@ public final class AppDatabase_Impl extends AppDatabase {
 
   private volatile ThietBiDAO _thietBiDAO;
 
+  private volatile PhongHocDAO _phongHocDAO;
+
+  private volatile ChiTietSuDungDAO _chiTietSuDungDAO;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
@@ -48,8 +56,10 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `user` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phone` TEXT, `email` TEXT, `password` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `loaithietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mathietbi` TEXT, `tenthietbi` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `thietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maThietBi` TEXT, `tenThietBi` TEXT, `xuatXu` TEXT, `soLuong` INTEGER NOT NULL, `tinhTrang` TEXT, `imageUrl` TEXT, `loaiThietBiId` INTEGER NOT NULL, FOREIGN KEY(`loaiThietBiId`) REFERENCES `loaithietbi`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `phong_hoc` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maPhongHoc` TEXT, `tenPhongHoc` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `chi_tiet_su_dung` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phongHocId` INTEGER NOT NULL, `thietBiId` INTEGER NOT NULL, `ngaySuDung` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7bff662e660a98cf22a84ffd45bd4010')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9764d9801b5f5295e1f3eda3821feea5')");
       }
 
       @Override
@@ -57,6 +67,8 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("DROP TABLE IF EXISTS `user`");
         db.execSQL("DROP TABLE IF EXISTS `loaithietbi`");
         db.execSQL("DROP TABLE IF EXISTS `thietbi`");
+        db.execSQL("DROP TABLE IF EXISTS `phong_hoc`");
+        db.execSQL("DROP TABLE IF EXISTS `chi_tiet_su_dung`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -147,9 +159,36 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoThietbi + "\n"
                   + " Found:\n" + _existingThietbi);
         }
+        final HashMap<String, TableInfo.Column> _columnsPhongHoc = new HashMap<String, TableInfo.Column>(3);
+        _columnsPhongHoc.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPhongHoc.put("maPhongHoc", new TableInfo.Column("maPhongHoc", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPhongHoc.put("tenPhongHoc", new TableInfo.Column("tenPhongHoc", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysPhongHoc = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesPhongHoc = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoPhongHoc = new TableInfo("phong_hoc", _columnsPhongHoc, _foreignKeysPhongHoc, _indicesPhongHoc);
+        final TableInfo _existingPhongHoc = TableInfo.read(db, "phong_hoc");
+        if (!_infoPhongHoc.equals(_existingPhongHoc)) {
+          return new RoomOpenHelper.ValidationResult(false, "phong_hoc(com.example.nhom24.Model.PhongHoc).\n"
+                  + " Expected:\n" + _infoPhongHoc + "\n"
+                  + " Found:\n" + _existingPhongHoc);
+        }
+        final HashMap<String, TableInfo.Column> _columnsChiTietSuDung = new HashMap<String, TableInfo.Column>(4);
+        _columnsChiTietSuDung.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsChiTietSuDung.put("phongHocId", new TableInfo.Column("phongHocId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsChiTietSuDung.put("thietBiId", new TableInfo.Column("thietBiId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsChiTietSuDung.put("ngaySuDung", new TableInfo.Column("ngaySuDung", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysChiTietSuDung = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesChiTietSuDung = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoChiTietSuDung = new TableInfo("chi_tiet_su_dung", _columnsChiTietSuDung, _foreignKeysChiTietSuDung, _indicesChiTietSuDung);
+        final TableInfo _existingChiTietSuDung = TableInfo.read(db, "chi_tiet_su_dung");
+        if (!_infoChiTietSuDung.equals(_existingChiTietSuDung)) {
+          return new RoomOpenHelper.ValidationResult(false, "chi_tiet_su_dung(com.example.nhom24.Model.ChiTietSuDung).\n"
+                  + " Expected:\n" + _infoChiTietSuDung + "\n"
+                  + " Found:\n" + _existingChiTietSuDung);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "7bff662e660a98cf22a84ffd45bd4010", "2ed502dca1675f03f999ae4d2f03800e");
+    }, "9764d9801b5f5295e1f3eda3821feea5", "098db7e1ac1e7107e89d75c5f4cd37c0");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -160,7 +199,7 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user","loaithietbi","thietbi");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "user","loaithietbi","thietbi","phong_hoc","chi_tiet_su_dung");
   }
 
   @Override
@@ -179,6 +218,8 @@ public final class AppDatabase_Impl extends AppDatabase {
       _db.execSQL("DELETE FROM `user`");
       _db.execSQL("DELETE FROM `loaithietbi`");
       _db.execSQL("DELETE FROM `thietbi`");
+      _db.execSQL("DELETE FROM `phong_hoc`");
+      _db.execSQL("DELETE FROM `chi_tiet_su_dung`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -199,6 +240,8 @@ public final class AppDatabase_Impl extends AppDatabase {
     _typeConvertersMap.put(UserDAO.class, UserDAO_Impl.getRequiredConverters());
     _typeConvertersMap.put(LoaiThietBiDAO.class, LoaiThietBiDAO_Impl.getRequiredConverters());
     _typeConvertersMap.put(ThietBiDAO.class, ThietBiDAO_Impl.getRequiredConverters());
+    _typeConvertersMap.put(PhongHocDAO.class, PhongHocDAO_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ChiTietSuDungDAO.class, ChiTietSuDungDAO_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -255,6 +298,34 @@ public final class AppDatabase_Impl extends AppDatabase {
           _thietBiDAO = new ThietBiDAO_Impl(this);
         }
         return _thietBiDAO;
+      }
+    }
+  }
+
+  @Override
+  public PhongHocDAO phongHocDAO() {
+    if (_phongHocDAO != null) {
+      return _phongHocDAO;
+    } else {
+      synchronized(this) {
+        if(_phongHocDAO == null) {
+          _phongHocDAO = new PhongHocDAO_Impl(this);
+        }
+        return _phongHocDAO;
+      }
+    }
+  }
+
+  @Override
+  public ChiTietSuDungDAO chiTietSuDungDAO() {
+    if (_chiTietSuDungDAO != null) {
+      return _chiTietSuDungDAO;
+    } else {
+      synchronized(this) {
+        if(_chiTietSuDungDAO == null) {
+          _chiTietSuDungDAO = new ChiTietSuDungDAO_Impl(this);
+        }
+        return _chiTietSuDungDAO;
       }
     }
   }
