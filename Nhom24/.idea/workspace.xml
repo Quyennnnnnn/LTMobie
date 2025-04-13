@@ -191,6 +191,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" afterDir="false" />
@@ -241,6 +242,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Run",
+    "PROJECT_TRUSTED_KEY": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -345,6 +347,17 @@
       <updated>1744087810128</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java</url>
+          <line>211</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
