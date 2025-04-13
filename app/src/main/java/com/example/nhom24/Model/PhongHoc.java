@@ -9,7 +9,7 @@ public class PhongHoc {
     private int id;
     private String maPhongHoc;
     private String tenPhongHoc;
-
+    // tạo các getter setter tương ứng
     public PhongHoc(String maPhongHoc, String tenPhongHoc) {
         this.maPhongHoc = maPhongHoc;
         this.tenPhongHoc = tenPhongHoc;
