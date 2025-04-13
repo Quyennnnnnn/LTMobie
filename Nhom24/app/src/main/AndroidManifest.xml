@@ -48,6 +48,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".UI.ChartActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.DangNhap"
             android:exported="true">
             <intent-filter>

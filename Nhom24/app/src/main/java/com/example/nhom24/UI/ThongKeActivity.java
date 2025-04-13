@@ -2,6 +2,7 @@ package com.example.nhom24.UI;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,7 +42,7 @@ import java.util.concurrent.Executors;
 public class ThongKeActivity extends AppCompatActivity {
     private ImageView btnBack;
     private EditText etStartDate, etEndDate, edtSearchDevice;
-    private Button btnFilter, btnChart, btnExport;
+    private Button btnFilter, btnChart;
     private RecyclerView rvThongKe;
     private ThongKeAdapter adapter;
     private List<ThongKeItem> thongKeList;
@@ -66,7 +67,6 @@ public class ThongKeActivity extends AppCompatActivity {
         edtSearchDevice = findViewById(R.id.edtSearchDevice);
         btnFilter = findViewById(R.id.btnFilter);
         btnChart = findViewById(R.id.btnChart);
-        btnExport = findViewById(R.id.btnExport);
         rvThongKe = findViewById(R.id.rvThongKe);
 
         // Khởi tạo database và executor
@@ -117,11 +117,26 @@ public class ThongKeActivity extends AppCompatActivity {
         setupClearButton(etEndDate);
         setupClearButton(edtSearchDevice);
 
-        // Xử lý nút Xem Chart (chưa triển khai)
-        btnChart.setOnClickListener(v -> Toast.makeText(this, "Chức năng Xem Chart chưa được triển khai!", Toast.LENGTH_SHORT).show());
+        btnChart.setOnClickListener(v -> {
+            String startDate = etStartDate.getText().toString().trim();
+            String endDate = etEndDate.getText().toString().trim();
 
-        // Xử lý nút Xuất Báo Cáo (chưa triển khai)
-        btnExport.setOnClickListener(v -> Toast.makeText(this, "Chức năng Xuất Báo Cáo chưa được triển khai!", Toast.LENGTH_SHORT).show());
+            if (startDate.isEmpty() || endDate.isEmpty()) {
+                Toast.makeText(this, "Vui lòng chọn đầy đủ ngày bắt đầu và ngày kết thúc!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!startDate.matches("\\d{4}-\\d{2}-\\d{2}") || !endDate.matches("\\d{4}-\\d{2}-\\d{2}")) {
+                Toast.makeText(this, "Ngày phải có định dạng YYYY-MM-DD!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Chuyển sang ChartActivity
+            Intent intent = new Intent(ThongKeActivity.this, ChartActivity.class);
+            intent.putExtra("start_date", startDate);
+            intent.putExtra("end_date", endDate);
+            startActivity(intent);
+        });
     }
 
     @SuppressLint("ClickableViewAccessibility")
