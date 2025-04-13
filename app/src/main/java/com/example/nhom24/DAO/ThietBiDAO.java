@@ -26,4 +26,5 @@ public interface ThietBiDAO {
 
     @Query("SELECT * FROM thietbi WHERE maThietBi LIKE :query OR tenThietBi LIKE :query")
     List<ThietBi> search(String query);
+
 }
