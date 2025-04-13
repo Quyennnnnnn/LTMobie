@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Nhom24"
+        tools:targetApi="31">
+        <activity
+            android:name=".UI.DoiMatKhauActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ThongKeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.NhanVienActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.PhongHocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ChiTietSuDungActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ThietBiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoaiThietBiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Home"
+            android:exported="false" />
+        <activity
+            android:name=".UI.DangKy"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.DangNhap"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
