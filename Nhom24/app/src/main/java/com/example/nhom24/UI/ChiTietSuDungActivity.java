@@ -39,7 +39,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
     private Spinner spinnerPhongHocCTSD;
     private Spinner spinnerThietBiCTSD;
     private EditText edtNgaySuDungCTSD;
-    private MaterialButton btnLuuCTSD; // Thay đổi từ Button sang MaterialButton
+    private MaterialButton btnLuuCTSD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

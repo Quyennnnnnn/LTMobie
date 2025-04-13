@@ -66,11 +66,21 @@ public class ThietBiAdapter extends RecyclerView.Adapter<ThietBiAdapter.ViewHold
         holder.tvTinhTrang.setText("Tình trạng: " + thietBi.getTinhTrang());
         holder.tvSoLuong.setText("SL: " + thietBi.getSoLuong());
 
-        // Load image
+        String loaiThietBiName = "Không xác định";
+        if (loaiThietBiList != null) {
+            for (LoaiThietBi loai : loaiThietBiList) {
+                if (loai.getId() == thietBi.getLoaiThietBiId()) {
+                    loaiThietBiName = loai.getTenthietbi();
+                    break;
+                }
+            }
+        }
+        holder.tvLoaiThietBi.setText("Loại: " + loaiThietBiName);
+
         if (thietBi.getImageUrl() != null && !thietBi.getImageUrl().isEmpty()) {
             Glide.with(holder.itemView.getContext())
                     .load(Uri.parse(thietBi.getImageUrl()))
-                    .error(R.drawable.ic_camera) // Replace with your custom camera icon
+                    .error(R.drawable.ic_camera)
                     .placeholder(R.drawable.ic_camera)
                     .into(holder.imgThietBi);
         } else {
@@ -99,7 +109,7 @@ public class ThietBiAdapter extends RecyclerView.Adapter<ThietBiAdapter.ViewHold
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvMaThietBi, tvTenThietBi, tvXuatXu, tvTinhTrang, tvSoLuong;
+        TextView tvMaThietBi, tvTenThietBi, tvXuatXu, tvTinhTrang, tvSoLuong, tvLoaiThietBi;
         ImageView imgThietBi;
         ImageButton btnEdit, btnDelete;
 
@@ -110,6 +120,7 @@ public class ThietBiAdapter extends RecyclerView.Adapter<ThietBiAdapter.ViewHold
             tvXuatXu = itemView.findViewById(R.id.tvXuatXu);
             tvTinhTrang = itemView.findViewById(R.id.tvTinhTrang);
             tvSoLuong = itemView.findViewById(R.id.tvSoLuong);
+            tvLoaiThietBi = itemView.findViewById(R.id.tvLoaiThietBi);
             imgThietBi = itemView.findViewById(R.id.imgThietBi);
             btnEdit = itemView.findViewById(R.id.btnEdit);
             btnDelete = itemView.findViewById(R.id.btnDelete);

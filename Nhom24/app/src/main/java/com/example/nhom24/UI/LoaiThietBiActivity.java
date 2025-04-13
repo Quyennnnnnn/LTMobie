@@ -42,35 +42,28 @@ public class LoaiThietBiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loai_thiet_bi);
 
-        // Ánh xạ view
         toolbar = findViewById(R.id.toolbar);
         btnBack = findViewById(R.id.btnBack);
         edtSearch = findViewById(R.id.edtSearch);
         recyclerViewLoaiThietBi = findViewById(R.id.recyclerViewLoaiThietBi);
         fabAdd = findViewById(R.id.fabAdd);
 
-        // Khởi tạo database
         database = AppDatabase.getInstance(this);
 
-        // Thiết lập Toolbar
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-        // Xử lý nút Back
         btnBack.setOnClickListener(v -> finish());
 
-        // Thiết lập RecyclerView
         recyclerViewLoaiThietBi.setLayoutManager(new LinearLayoutManager(this));
         loaiThietBiList = new ArrayList<>();
         adapter = new LoaiThietBiAdapter(loaiThietBiList);
         recyclerViewLoaiThietBi.setAdapter(adapter);
 
-        // Load dữ liệu từ database
         loadData();
 
-        // Xử lý sự kiện Sửa/Xóa
         adapter.setOnItemClickListener(new LoaiThietBiAdapter.OnItemClickListener() {
             @Override
             public void onEditClick(LoaiThietBi item) {
@@ -85,10 +78,8 @@ public class LoaiThietBiActivity extends AppCompatActivity {
             }
         });
 
-        // Xử lý nút Thêm
         fabAdd.setOnClickListener(v -> showAddDialog());
 
-        // Xử lý tìm kiếm theo thời gian thực với EditText
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

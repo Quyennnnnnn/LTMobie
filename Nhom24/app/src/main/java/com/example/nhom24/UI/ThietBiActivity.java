@@ -58,23 +58,19 @@ public class ThietBiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thiet_bi);
 
-        // Ánh xạ view
         toolbar = findViewById(R.id.toolbar);
         btnBack = findViewById(R.id.btnBack);
         edtSearch = findViewById(R.id.edtSearch);
         recyclerViewThietBi = findViewById(R.id.recyclerViewThietBi);
         fabAdd = findViewById(R.id.fabAdd);
 
-        // Khởi tạo database
         database = AppDatabase.getInstance(this);
 
-        // Thiết lập Toolbar
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
-        // Khởi tạo ActivityResultLauncher để chọn ảnh
         imagePickerLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                 Uri imageUri = result.getData().getData();
@@ -103,20 +99,16 @@ public class ThietBiActivity extends AppCompatActivity {
             }
         });
 
-        // Xử lý nút Back
         btnBack.setOnClickListener(v -> finish());
 
-        // Thiết lập RecyclerView
         recyclerViewThietBi.setLayoutManager(new LinearLayoutManager(this));
         thietBiList = new ArrayList<>();
         loaiThietBiList = new ArrayList<>();
         adapter = new ThietBiAdapter(thietBiList, loaiThietBiList, this::showPopupImageDialog);
         recyclerViewThietBi.setAdapter(adapter);
 
-        // Load dữ liệu
         loadData();
 
-        // Xử lý sự kiện Sửa/Xóa
         adapter.setOnItemClickListener(new ThietBiAdapter.OnItemClickListener() {
             @Override
             public void onEditClick(ThietBi item) {
@@ -131,10 +123,8 @@ public class ThietBiActivity extends AppCompatActivity {
             }
         });
 
-        // Xử lý nút Thêm
         fabAdd.setOnClickListener(v -> showAddDialog());
 
-        // Xử lý tìm kiếm
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -190,7 +180,6 @@ public class ThietBiActivity extends AppCompatActivity {
             popupImageView.setImageResource(R.drawable.ic_camera);
         }
 
-        // Dismiss on click and restore brightness
         View.OnClickListener dismissListener = v -> {
             layoutParams.alpha = 1.0f; // Restore full brightness
             getWindow().setAttributes(layoutParams);
@@ -201,7 +190,6 @@ public class ThietBiActivity extends AppCompatActivity {
         popupDialog.getWindow().getDecorView().setOnClickListener(dismissListener);
         btnClose.setOnClickListener(dismissListener);
 
-        // Fade-in animation
         popupImageView.setAlpha(0f);
         popupImageView.animate().alpha(1f).setDuration(300).start();
 
@@ -223,7 +211,6 @@ public class ThietBiActivity extends AppCompatActivity {
         Spinner spinnerLoaiThietBi = dialog.findViewById(R.id.spinnerLoaiThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
 
-        // Thiết lập Spinner
         List<String> loaiThietBiNames = new ArrayList<>();
         for (LoaiThietBi loai : loaiThietBiList) {
             loaiThietBiNames.add(loai.getTenthietbi());
@@ -232,7 +219,6 @@ public class ThietBiActivity extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoaiThietBi.setAdapter(spinnerAdapter);
 
-        // Hiển thị dữ liệu cũ
         edtMaThietBi.setText(item.getMaThietBi());
         edtTenThietBi.setText(item.getTenThietBi());
         edtXuatXu.setText(item.getXuatXu());
@@ -259,7 +245,6 @@ public class ThietBiActivity extends AppCompatActivity {
             }
         }
 
-        // Xử lý chọn hình ảnh
         btnChonHinh.setOnClickListener(v -> {
             dialogImageView = imgThietBi;
             Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
@@ -333,7 +318,6 @@ public class ThietBiActivity extends AppCompatActivity {
         Spinner spinnerLoaiThietBi = dialog.findViewById(R.id.spinnerLoaiThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
 
-        // Reset dữ liệu
         tvTitle.setText("Thêm thiết bị");
         edtMaThietBi.setText("");
         edtTenThietBi.setText("");
@@ -343,10 +327,8 @@ public class ThietBiActivity extends AppCompatActivity {
         imgThietBi.setImageResource(R.drawable.ic_camera);
         selectedImageUri = null;
 
-        // Click to show pop-up
         imgThietBi.setOnClickListener(v -> showPopupImageDialog(null));
 
-        // Thiết lập Spinner
         List<String> loaiThietBiNames = new ArrayList<>();
         for (LoaiThietBi loai : loaiThietBiList) {
             loaiThietBiNames.add(loai.getTenthietbi());
@@ -355,7 +337,6 @@ public class ThietBiActivity extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoaiThietBi.setAdapter(spinnerAdapter);
 
-        // Xử lý chọn hình ảnh
         btnChonHinh.setOnClickListener(v -> {
             dialogImageView = imgThietBi;
             Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);

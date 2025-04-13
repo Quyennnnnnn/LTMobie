@@ -253,6 +253,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangKy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangKy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/LoaiThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/LoaiThietBiActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/PhongHocActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/PhongHocActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chi_tiet_su_dung.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chi_tiet_su_dung.xml" afterDir="false" />
@@ -314,7 +315,7 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Nhom24/app/src/main/res/layout"
+    "last_opened_file_path": "C:/Nam3/HK2/New folder/Nhom24"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -421,28 +422,17 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java</url>
-          <line>211</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.example.nhom24">
           <value>
-            <CheckInfo lastCheckTimestamp="1744447588766" />
+            <CheckInfo lastCheckTimestamp="1744560904218" />
           </value>
         </entry>
         <entry key="com.example.nhom24.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1744447588767" />
+            <CheckInfo lastCheckTimestamp="1744560904218" />
           </value>
         </entry>
       </map>
