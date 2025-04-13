@@ -15,7 +15,9 @@ drawable image_thietbi_foreground
 drawable search_background
 drawable wave_background
 id appBarLayout
+id btnAddNhanVien
 id btnBack
+id btnCancel
 id btnChiTietSuDung
 id btnChonHinh
 id btnClose
@@ -48,10 +50,12 @@ id edtXuatXu
 id fabAdd
 id imgProfile
 id imgThietBi
+id ivIcon
 id main
 id popupImageView
 id recyclerViewLoaiThietBi
 id recyclerViewThietBi
+id rvNhanVien
 id spinnerLoaiThietBi
 id tilConfirmPassword
 id tilEmail
@@ -65,6 +69,7 @@ id tilTenThietBi
 id tilTinhTrang
 id tilXuatXu
 id toolbar
+id tvEmail
 id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaThietBi
@@ -90,7 +95,9 @@ layout activity_thong_ke
 layout dialog_edit_loai_thiet_bi
 layout dialog_edit_thiet_bi
 layout dialog_fullscreen_image
+layout dialog_nhan_vien
 layout item_loai_thiet_bi
+layout item_nhan_vien
 layout item_thiet_bi
 mipmap ic_launcher
 mipmap ic_launcher_round

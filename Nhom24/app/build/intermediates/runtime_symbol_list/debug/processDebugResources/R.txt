@@ -3219,7 +3219,9 @@ int id bounce 0x7f080061
 int id bounceBoth 0x7f080062
 int id bounceEnd 0x7f080063
 int id bounceStart 0x7f080064
+int id btnAddNhanVien 0x7f08023c
 int id btnBack 0x7f080065
+int id btnCancel 0x7f08023d
 int id btnChiTietSuDung 0x7f080066
 int id btnChonHinh 0x7f080232
 int id btnClose 0x7f080239
@@ -3386,6 +3388,7 @@ int id inward 0x7f080103
 int id is_pooling_container_tag 0x7f080104
 int id italic 0x7f080105
 int id item_touch_helper_previous_elevation 0x7f080106
+int id ivIcon 0x7f08023e
 int id jumpToEnd 0x7f080107
 int id jumpToStart 0x7f080108
 int id labeled 0x7f080109
@@ -3529,6 +3532,7 @@ int id right_icon 0x7f080191
 int id right_side 0x7f080192
 int id rounded 0x7f080193
 int id row_index_key 0x7f080194
+int id rvNhanVien 0x7f08023f
 int id save_non_transition_alpha 0x7f080195
 int id save_overlay_view 0x7f080196
 int id sawtooth 0x7f080197
@@ -3652,6 +3656,7 @@ int id transition_position 0x7f08020b
 int id transition_scene_layoutid_cache 0x7f08020c
 int id transition_transform 0x7f08020d
 int id triangle 0x7f08020e
+int id tvEmail 0x7f080240
 int id tvLoaiThietBi 0x7f080236
 int id tvMaLoaiThietBi 0x7f08020f
 int id tvMaThietBi 0x7f080210
@@ -3832,9 +3837,11 @@ int layout design_text_input_start_icon 0x7f0b0036
 int layout dialog_edit_loai_thiet_bi 0x7f0b0037
 int layout dialog_edit_thiet_bi 0x7f0b0038
 int layout dialog_fullscreen_image 0x7f0b007a
+int layout dialog_nhan_vien 0x7f0b007b
 int layout ime_base_split_test_activity 0x7f0b0039
 int layout ime_secondary_split_test_activity 0x7f0b003a
 int layout item_loai_thiet_bi 0x7f0b003b
+int layout item_nhan_vien 0x7f0b007c
 int layout item_thiet_bi 0x7f0b003c
 int layout m3_alert_dialog 0x7f0b003d
 int layout m3_alert_dialog_actions 0x7f0b003e

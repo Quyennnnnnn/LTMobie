@@ -7,15 +7,17 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.nhom24.DAO.LoaiThietBiDAO;
+import com.example.nhom24.DAO.NhanVienDAO;
 import com.example.nhom24.DAO.ThietBiDAO;
 import com.example.nhom24.DAO.UserDAO;
 import com.example.nhom24.Model.LoaiThietBi;
+import com.example.nhom24.Model.NhanVien;
 import com.example.nhom24.Model.ThietBi;
 import com.example.nhom24.Model.User;
 
-@Database(entities = {User.class, LoaiThietBi.class, ThietBi.class }, version = 2)
+@Database(entities = {User.class, LoaiThietBi.class, ThietBi.class, NhanVien.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
-    private static final String DATABASE_NAME = "app5.db";
+    private static final String DATABASE_NAME = "app6.db";
     private static AppDatabase instance;
 
     public static synchronized AppDatabase getInstance(Context context)
@@ -32,4 +34,5 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDAO userDAO();
     public abstract LoaiThietBiDAO loaiThietBiDAO();
     public abstract ThietBiDAO thietBiDAO();
+    public  abstract NhanVienDAO nhanVienDAO();
 }

@@ -36,32 +36,32 @@
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_dialog_edit_loai_thiet_bi.xml.flat",
-        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\layout\\dialog_edit_loai_thiet_bi.xml"
+        "merged": "com.example.nhom24.app-debug-37:/layout_item_nhan_vien.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/item_nhan_vien.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\mipmap-xhdpi_image_thietbi_round.webp.flat",
-        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\mipmap-xhdpi\\image_thietbi_round.webp"
+        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_dialog_edit_loai_thiet_bi.xml.flat",
+        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\layout\\dialog_edit_loai_thiet_bi.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\drawable_ic_delete.xml.flat",
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\ic_delete.xml"
     },
     {
-        "merged": "com.example.nhom24.app-debug-37:/layout_dialog_fullscreen_image.xml.flat",
-        "source": "com.example.nhom24.app-main-39:/layout/dialog_fullscreen_image.xml"
+        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\mipmap-xhdpi_image_thietbi_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\mipmap-xhdpi\\image_thietbi_round.webp"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\drawable_ic_edit.xml.flat",
-        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\ic_edit.xml"
+        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\mipmap-hdpi_image_thietbi_round.webp.flat",
+        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\mipmap-hdpi\\image_thietbi_round.webp"
     },
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\xml_data_extraction_rules.xml.flat",
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\mipmap-hdpi_image_thietbi_round.webp.flat",
-        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\mipmap-hdpi\\image_thietbi_round.webp"
+        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\ic_edit.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\mipmap-mdpi_image_thietbi_round.webp.flat",
@@ -76,12 +76,12 @@
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\wave_background.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\drawable_image_thietbi_background.xml.flat",
-        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\image_thietbi_background.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_item_thiet_bi.xml.flat",
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\layout\\item_thiet_bi.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\drawable_image_thietbi_background.xml.flat",
+        "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\drawable\\image_thietbi_background.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_activity_settings.xml.flat",
@@ -150,6 +150,14 @@
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_activity_phong_hoc.xml.flat",
         "source": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-main-39:\\layout\\activity_phong_hoc.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_activity_nhan_vien.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/activity_nhan_vien.xml"
+    },
+    {
+        "merged": "com.example.nhom24.app-debug-37:/layout_dialog_nhan_vien.xml.flat",
+        "source": "com.example.nhom24.app-main-39:/layout/dialog_nhan_vien.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\LoginScreenDemo\\gradle\\daemon\\8.10.2\\com.example.nhom24.app-debug-37:\\layout_dialog_fullscreen_image.xml.flat",

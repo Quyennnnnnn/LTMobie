@@ -63,6 +63,7 @@ public class DangNhap extends AppCompatActivity {
                     // Chuyển hướng dựa trên phân quyền (đoạn code bị comment trong code gốc)
                     Intent intent;
                     // Nếu bạn có phân quyền, hãy uncomment và điều chỉnh logic dưới đây
+                    /*
                     String role = user.getPhanquyen().trim().toLowerCase();
                     if (role.equals("pm")) {
                         intent = new Intent(DangNhap.this, PMActivity.class);
@@ -74,7 +75,7 @@ public class DangNhap extends AppCompatActivity {
                         Toast.makeText(DangNhap.this, "Phân quyền không hợp lệ", Toast.LENGTH_SHORT).show();
                         return;
                     }
-
+                    */
                     // Tạm thời chuyển đến MainActivity nếu không dùng phân quyền
                     intent = new Intent(DangNhap.this, Home.class);
                     intent.putExtra("username", taikhoan); // Gửi tài khoản qua Activity mới
