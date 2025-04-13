@@ -41,6 +41,15 @@
             android:background="@android:drawable/edit_text"
             android:backgroundTint="#E0E0E0" />
 
+        <Spinner
+            android:id="@+id/spinnerTrangThaiCTSD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:drawable/edit_text"
+            android:backgroundTint="#E0E0E0" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,7 +62,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:textColor="#212121" />
+                android:textColor="#212121"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:cursorVisible="false" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
