@@ -1,10 +1,12 @@
 package com.example.nhom24.UI;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -24,8 +26,11 @@ import com.example.nhom24.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class ChiTietSuDungActivity extends AppCompatActivity {
     private RecyclerView rvChiTietSuDungCTSD;
@@ -38,8 +43,10 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
     private Dialog dialogCTSD;
     private Spinner spinnerPhongHocCTSD;
     private Spinner spinnerThietBiCTSD;
+    private Spinner spinnerTrangThaiCTSD;
     private EditText edtNgaySuDungCTSD;
-    private MaterialButton btnLuuCTSD; // Thay đổi từ Button sang MaterialButton
+    private MaterialButton btnLuuCTSD;
+    private Calendar calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +61,8 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         toolbarCTSD.setNavigationOnClickListener(v -> finish());
 
         listChiTietSuDungCTSD = AppDatabase.getInstance(this).chiTietSuDungDAO().getAllChiTietSuDung();
-        listPhongHocCTSD = AppDatabase.getInstance(this).phongHocDAO().getAll();
-        listThietBiCTSD = AppDatabase.getInstance(this).thietBiDAO().getAll();
+        listPhongHocCTSD = AppDatabase.getInstance(this).phongHocDAO().getAll(); // Sửa từ getAll() thành getAllPhongHoc()
+        listThietBiCTSD = AppDatabase.getInstance(this).thietBiDAO().getAll(); // Sửa từ getAll() thành getAllThietBi()
 
         adapterCTSD = new ChiTietSuDungAdapter(this, listChiTietSuDungCTSD, listPhongHocCTSD, listThietBiCTSD, new ChiTietSuDungAdapter.OnItemClickListener() {
             @Override
@@ -81,6 +88,8 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                 showDialogEditCTSD(null);
             }
         });
+
+        calendar = Calendar.getInstance();
     }
 
     private void showDialogEditCTSD(ChiTietSuDung chiTietSuDung) {
@@ -89,9 +98,11 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
 
         spinnerPhongHocCTSD = dialogCTSD.findViewById(R.id.spinnerPhongHocCTSD);
         spinnerThietBiCTSD = dialogCTSD.findViewById(R.id.spinnerThietBiCTSD);
+        spinnerTrangThaiCTSD = dialogCTSD.findViewById(R.id.spinnerTrangThaiCTSD);
         edtNgaySuDungCTSD = dialogCTSD.findViewById(R.id.etNgaySuDungCTSD);
-        btnLuuCTSD = dialogCTSD.findViewById(R.id.btnSaveCTSD); // Đã sửa kiểu thành MaterialButton
+        btnLuuCTSD = dialogCTSD.findViewById(R.id.btnSaveCTSD);
 
+        // Cài đặt Spinner cho Phòng học
         List<String> phongHocNames = new ArrayList<>();
         for (PhongHoc ph : listPhongHocCTSD) {
             phongHocNames.add(ph.getTenPhongHoc());
@@ -100,6 +111,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         phongHocAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPhongHocCTSD.setAdapter(phongHocAdapter);
 
+        // Cài đặt Spinner cho Thiết bị
         List<String> thietBiNames = new ArrayList<>();
         for (ThietBi tb : listThietBiCTSD) {
             thietBiNames.add(tb.getTenThietBi());
@@ -108,6 +120,32 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         thietBiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerThietBiCTSD.setAdapter(thietBiAdapter);
 
+        // Cài đặt Spinner cho Trạng thái
+        List<String> trangThaiList = new ArrayList<>();
+        trangThaiList.add("Đang sử dụng");
+        trangThaiList.add("Không sử dụng");
+        ArrayAdapter<String> trangThaiAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, trangThaiList);
+        trangThaiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerTrangThaiCTSD.setAdapter(trangThaiAdapter);
+
+        // Cài đặt DatePicker cho Ngày sử dụng
+        edtNgaySuDungCTSD.setOnClickListener(v -> {
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(
+                    ChiTietSuDungActivity.this,
+                    (view, year1, month1, dayOfMonth) -> {
+                        calendar.set(year1, month1, dayOfMonth);
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                        edtNgaySuDungCTSD.setText(sdf.format(calendar.getTime()));
+                    },
+                    year, month, day);
+            datePickerDialog.show();
+        });
+
+        // Điền dữ liệu nếu đang chỉnh sửa
         if (chiTietSuDung != null) {
             for (int i = 0; i < listPhongHocCTSD.size(); i++) {
                 if (listPhongHocCTSD.get(i).getId() == chiTietSuDung.getPhongHocId()) {
@@ -121,9 +159,11 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                     break;
                 }
             }
+            spinnerTrangThaiCTSD.setSelection(trangThaiList.indexOf(chiTietSuDung.getTrangThai()));
             edtNgaySuDungCTSD.setText(chiTietSuDung.getNgaySuDung());
         } else {
             edtNgaySuDungCTSD.setText("");
+            spinnerTrangThaiCTSD.setSelection(0); // Mặc định là "Đang sử dụng"
         }
 
         btnLuuCTSD.setOnClickListener(new View.OnClickListener() {
@@ -131,10 +171,20 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int selectedPhongHocIndex = spinnerPhongHocCTSD.getSelectedItemPosition();
                 int selectedThietBiIndex = spinnerThietBiCTSD.getSelectedItemPosition();
+                String trangThai = spinnerTrangThaiCTSD.getSelectedItem().toString();
                 String ngaySuDung = edtNgaySuDungCTSD.getText().toString().trim();
 
-                if (selectedPhongHocIndex == -1 || selectedThietBiIndex == -1 || TextUtils.isEmpty(ngaySuDung)) {
-                    Toast.makeText(ChiTietSuDungActivity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+                // Kiểm tra dữ liệu
+                if (selectedPhongHocIndex == -1) {
+                    Toast.makeText(ChiTietSuDungActivity.this, "Vui lòng chọn phòng học", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (selectedThietBiIndex == -1) {
+                    Toast.makeText(ChiTietSuDungActivity.this, "Vui lòng chọn thiết bị", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(ngaySuDung)) {
+                    Toast.makeText(ChiTietSuDungActivity.this, "Vui lòng chọn ngày sử dụng", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -142,7 +192,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                 int thietBiId = listThietBiCTSD.get(selectedThietBiIndex).getId();
 
                 if (chiTietSuDung == null) {
-                    ChiTietSuDung newChiTietSuDung = new ChiTietSuDung(phongHocId, thietBiId, ngaySuDung);
+                    ChiTietSuDung newChiTietSuDung = new ChiTietSuDung(phongHocId, thietBiId, ngaySuDung, trangThai);
                     AppDatabase.getInstance(ChiTietSuDungActivity.this).chiTietSuDungDAO().insert(newChiTietSuDung);
                     listChiTietSuDungCTSD.add(newChiTietSuDung);
                     Toast.makeText(ChiTietSuDungActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
@@ -150,6 +200,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                     chiTietSuDung.setPhongHocId(phongHocId);
                     chiTietSuDung.setThietBiId(thietBiId);
                     chiTietSuDung.setNgaySuDung(ngaySuDung);
+                    chiTietSuDung.setTrangThai(trangThai);
                     AppDatabase.getInstance(ChiTietSuDungActivity.this).chiTietSuDungDAO().update(chiTietSuDung);
                     Toast.makeText(ChiTietSuDungActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
                 }
