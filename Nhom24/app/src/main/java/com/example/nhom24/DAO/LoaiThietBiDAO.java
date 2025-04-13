@@ -15,8 +15,6 @@ public interface LoaiThietBiDAO {
     @Query("SELECT * FROM loaithietbi")
     List<LoaiThietBi> getAll();
 
-    @Query("SELECT * FROM loaithietbi WHERE emailNhanVien = :email")
-    List<LoaiThietBi> getByNhanVien(String email);
     @Insert
     void insert(LoaiThietBi loaiThietBi);
 

@@ -10,25 +10,9 @@ public class LoaiThietBi {
     private String mathietbi;
     private String tenthietbi;
 
-    private String emailNhanVien;
     public LoaiThietBi(String mathietbi, String tenthietbi) {
         this.mathietbi = mathietbi;
         this.tenthietbi = tenthietbi;
-    }
-
-//    public LoaiThietBi(String mathietbi, String tenthietbi, String emailNhanVien) {
-//
-//        this.mathietbi = mathietbi;
-//        this.tenthietbi = tenthietbi;
-//        this.emailNhanVien = emailNhanVien;
-//    }
-
-    public String getEmailNhanVien() {
-        return emailNhanVien;
-    }
-
-    public void setEmailNhanVien(String emailNhanVien) {
-        this.emailNhanVien = emailNhanVien;
     }
 
     public int getId() {

@@ -1,5 +1,6 @@
 package com.example.nhom24.UI;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -68,6 +69,15 @@ public class DangKy extends AppCompatActivity {
                 // Thêm user mới vào database
                 User newUser = new User(phone, taikhoan, matkhau);
                 AppDatabase.getInstance(DangKy.this).userDAO().insert(newUser);
+
+                SharedPreferences sharedPreferences = getSharedPreferences("user_data", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("phone", phone);
+                editor.putString("email", taikhoan); // Ở đây taikhoan chính là email
+                editor.putString("password", matkhau);
+                editor.apply();
+
+
                 Toast.makeText(DangKy.this, "Đăng ký thành công", Toast.LENGTH_SHORT).show();
                 finish(); // Quay lại màn hình trước (thường là Login)
             }

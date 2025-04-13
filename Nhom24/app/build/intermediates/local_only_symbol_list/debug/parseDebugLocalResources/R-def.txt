@@ -8,6 +8,7 @@ drawable gradient_background_card
 drawable ic_camera
 drawable ic_delete
 drawable ic_edit
+drawable ic_face
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable image_thietbi_background
@@ -15,9 +16,8 @@ drawable image_thietbi_foreground
 drawable search_background
 drawable wave_background
 id appBarLayout
-id btnAddNhanVien
 id btnBack
-id btnCancel
+id btnChangePassword
 id btnChiTietSuDung
 id btnChonHinh
 id btnClose
@@ -35,10 +35,13 @@ id btnSettings
 id btnThietBi
 id btnThongKe
 id customHeader
+id drawer_layout
 id edtConfirmPassword
 id edtEmail
 id edtMaThietBi
 id edtMatKhau
+id edtNewPassword
+id edtOldPassword
 id edtPassword
 id edtPhone
 id edtSearch
@@ -50,12 +53,17 @@ id edtXuatXu
 id fabAdd
 id imgProfile
 id imgThietBi
-id ivIcon
 id main
+id nav_account
+id nav_email
+id nav_logout
+id nav_profile_image
+id nav_settings
+id nav_username
+id nav_view
 id popupImageView
 id recyclerViewLoaiThietBi
 id recyclerViewThietBi
-id rvNhanVien
 id spinnerLoaiThietBi
 id tilConfirmPassword
 id tilEmail
@@ -69,7 +77,6 @@ id tilTenThietBi
 id tilTinhTrang
 id tilXuatXu
 id toolbar
-id tvEmail
 id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaThietBi
@@ -84,6 +91,7 @@ id txtQuenMK
 layout activity_chi_tiet_su_dung
 layout activity_dang_ky
 layout activity_dang_nhap
+layout activity_doi_mat_khau
 layout activity_home
 layout activity_loai_thiet_bi
 layout activity_main
@@ -95,10 +103,10 @@ layout activity_thong_ke
 layout dialog_edit_loai_thiet_bi
 layout dialog_edit_thiet_bi
 layout dialog_fullscreen_image
-layout dialog_nhan_vien
 layout item_loai_thiet_bi
-layout item_nhan_vien
 layout item_thiet_bi
+layout nav_header
+menu nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap image_thietbi
@@ -109,3 +117,4 @@ style CircleImage
 style Theme.Nhom24
 xml backup_rules
 xml data_extraction_rules
+xml nav_menu

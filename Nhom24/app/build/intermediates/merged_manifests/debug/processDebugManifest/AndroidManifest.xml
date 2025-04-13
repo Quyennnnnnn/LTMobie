@@ -30,6 +30,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Nhom24" >
         <activity
+            android:name="com.example.nhom24.UI.DoiMatKhauActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.nhom24.UI.SettingsActivity"
             android:exported="false" />
         <activity

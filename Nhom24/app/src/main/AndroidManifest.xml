@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Nhom24"
         tools:targetApi="31">
         <activity
+            android:name=".UI.DoiMatKhauActivity"
+            android:exported="false" />
+        <activity
             android:name=".UI.SettingsActivity"
             android:exported="false" />
         <activity

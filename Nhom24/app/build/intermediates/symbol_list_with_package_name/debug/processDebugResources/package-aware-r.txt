@@ -3027,6 +3027,7 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
 drawable ic_edit
+drawable ic_face
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -3220,9 +3221,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id btnAddNhanVien
 id btnBack
-id btnCancel
+id btnChangePassword
 id btnChiTietSuDung
 id btnChonHinh
 id btnClose
@@ -3307,6 +3307,7 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawer_layout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -3319,6 +3320,8 @@ id edtConfirmPassword
 id edtEmail
 id edtMaThietBi
 id edtMatKhau
+id edtNewPassword
+id edtOldPassword
 id edtPassword
 id edtPhone
 id edtSearch
@@ -3389,7 +3392,6 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
-id ivIcon
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3463,6 +3465,13 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_account
+id nav_email
+id nav_logout
+id nav_profile_image
+id nav_settings
+id nav_username
+id nav_view
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3533,7 +3542,6 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id rvNhanVien
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3657,7 +3665,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvEmail
 id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaThietBi
@@ -3811,6 +3818,7 @@ layout abc_tooltip
 layout activity_chi_tiet_su_dung
 layout activity_dang_ky
 layout activity_dang_nhap
+layout activity_doi_mat_khau
 layout activity_home
 layout activity_loai_thiet_bi
 layout activity_main
@@ -3838,11 +3846,9 @@ layout design_text_input_start_icon
 layout dialog_edit_loai_thiet_bi
 layout dialog_edit_thiet_bi
 layout dialog_fullscreen_image
-layout dialog_nhan_vien
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_loai_thiet_bi
-layout item_nhan_vien
 layout item_thiet_bi
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3895,6 +3901,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout nav_header
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -3905,6 +3912,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap image_thietbi
@@ -5362,3 +5370,4 @@ styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration
 styleable include constraintSet
 xml backup_rules
 xml data_extraction_rules
+xml nav_menu
