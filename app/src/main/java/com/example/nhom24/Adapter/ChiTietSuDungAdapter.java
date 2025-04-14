@@ -15,11 +15,13 @@ import com.example.nhom24.Model.PhongHoc;
 import com.example.nhom24.Model.ThietBi;
 import com.example.nhom24.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdapter.ChiTietSuDungViewHolder> {
     private Context contextCTSD;
     private List<ChiTietSuDung> listChiTietSuDungCTSD;
+    private List<ChiTietSuDung> listChiTietSuDungFull; // Danh sách đầy đủ để lọc
     private List<PhongHoc> listPhongHocCTSD;
     private List<ThietBi> listThietBiCTSD;
     private OnItemClickListener listenerCTSD;
@@ -33,6 +35,7 @@ public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdap
     public ChiTietSuDungAdapter(Context context, List<ChiTietSuDung> listChiTietSuDung, List<PhongHoc> listPhongHoc, List<ThietBi> listThietBi, OnItemClickListener listener) {
         this.contextCTSD = context;
         this.listChiTietSuDungCTSD = listChiTietSuDung;
+        this.listChiTietSuDungFull = new ArrayList<>(listChiTietSuDung); // Sao chép danh sách đầy đủ
         this.listPhongHocCTSD = listPhongHoc;
         this.listThietBiCTSD = listThietBi;
         this.listenerCTSD = listener;
@@ -50,7 +53,7 @@ public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdap
         ChiTietSuDung chiTietSuDung = listChiTietSuDungCTSD.get(position);
 
         // Tìm tên phòng học
-        String tenPhongHoc = "";
+        String tenPhongHoc = "Không xác định";
         for (PhongHoc ph : listPhongHocCTSD) {
             if (ph.getId() == chiTietSuDung.getPhongHocId()) {
                 tenPhongHoc = ph.getTenPhongHoc();
@@ -59,7 +62,7 @@ public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdap
         }
 
         // Tìm tên thiết bị
-        String tenThietBi = "";
+        String tenThietBi = "Không xác định";
         for (ThietBi tb : listThietBiCTSD) {
             if (tb.getId() == chiTietSuDung.getThietBiId()) {
                 tenThietBi = tb.getTenThietBi();
@@ -83,6 +86,45 @@ public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdap
 
     public void updateListCTSD(List<ChiTietSuDung> newList) {
         this.listChiTietSuDungCTSD = newList;
+        this.listChiTietSuDungFull = new ArrayList<>(newList); // Cập nhật danh sách đầy đủ
+        notifyDataSetChanged();
+    }
+
+    // Hàm lọc danh sách dựa trên từ khóa tìm kiếm
+    public void filter(String query) {
+        listChiTietSuDungCTSD.clear();
+        if (query.isEmpty()) {
+            listChiTietSuDungCTSD.addAll(listChiTietSuDungFull);
+        } else {
+            query = query.toLowerCase();
+            for (ChiTietSuDung chiTietSuDung : listChiTietSuDungFull) {
+                // Tìm tên phòng học
+                String tenPhongHoc = "Không xác định";
+                for (PhongHoc ph : listPhongHocCTSD) {
+                    if (ph.getId() == chiTietSuDung.getPhongHocId()) {
+                        tenPhongHoc = ph.getTenPhongHoc();
+                        break;
+                    }
+                }
+
+                // Tìm tên thiết bị
+                String tenThietBi = "Không xác định";
+                for (ThietBi tb : listThietBiCTSD) {
+                    if (tb.getId() == chiTietSuDung.getThietBiId()) {
+                        tenThietBi = tb.getTenThietBi();
+                        break;
+                    }
+                }
+
+                // Kiểm tra từ khóa trong các trường
+                if (tenPhongHoc.toLowerCase().contains(query) ||
+                        tenThietBi.toLowerCase().contains(query) ||
+                        chiTietSuDung.getNgaySuDung().toLowerCase().contains(query) ||
+                        chiTietSuDung.getTrangThai().toLowerCase().contains(query)) {
+                    listChiTietSuDungCTSD.add(chiTietSuDung);
+                }
+            }
+        }
         notifyDataSetChanged();
     }
 
