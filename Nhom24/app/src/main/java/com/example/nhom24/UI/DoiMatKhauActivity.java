@@ -24,13 +24,11 @@ public class DoiMatKhauActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doi_mat_khau);
 
-        // Initialize UI elements
         edtOldPassword = findViewById(R.id.edtOldPassword);
         edtNewPassword = findViewById(R.id.edtNewPassword);
         edtConfirmPassword = findViewById(R.id.edtConfirmPassword);
         btnChangePassword = findViewById(R.id.btnChangePassword);
 
-        // Null check for safety
         if (edtOldPassword == null || edtNewPassword == null ||
                 edtConfirmPassword == null || btnChangePassword == null) {
             Toast.makeText(this, "Lỗi giao diện!", Toast.LENGTH_SHORT).show();
@@ -38,11 +36,9 @@ public class DoiMatKhauActivity extends AppCompatActivity {
             return;
         }
 
-        // Initialize Room database
         database = AppDatabase.getInstance(this);
         userDao = database.userDAO();
 
-        // Get current user's email from SharedPreferences
         SharedPreferences preferences = getSharedPreferences("user_data", MODE_PRIVATE);
         String userEmail = preferences.getString("email", "");
 
@@ -57,7 +53,6 @@ public class DoiMatKhauActivity extends AppCompatActivity {
             String newPass = edtNewPassword.getText().toString().trim();
             String confirmPass = edtConfirmPassword.getText().toString().trim();
 
-            // Input validation
             if (oldPass.isEmpty() || newPass.isEmpty() || confirmPass.isEmpty()) {
                 Toast.makeText(this, "Vui lòng điền đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                 return;
@@ -71,14 +66,12 @@ public class DoiMatKhauActivity extends AppCompatActivity {
                 return;
             }
 
-            // Verify old password from database
             User user = userDao.findByUsername(userEmail);
             if (user == null || !user.getPassword().equals(oldPass)) {
                 Toast.makeText(this, "Mật khẩu cũ không đúng!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            // Update password in database
             user.setPassword(newPass);
             int rowsAffected = userDao.updateUser(user);
 

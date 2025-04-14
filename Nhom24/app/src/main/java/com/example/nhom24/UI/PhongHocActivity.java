@@ -74,7 +74,6 @@ public class PhongHocActivity extends AppCompatActivity {
             }
         });
 
-        // Xử lý sự kiện tìm kiếm
         searchViewPH.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

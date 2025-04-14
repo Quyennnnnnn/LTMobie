@@ -57,15 +57,12 @@ public class ThietBiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thiet_bi);
-
         toolbar = findViewById(R.id.toolbar);
         btnBack = findViewById(R.id.btnBack);
         edtSearch = findViewById(R.id.edtSearch);
         recyclerViewThietBi = findViewById(R.id.recyclerViewThietBi);
         fabAdd = findViewById(R.id.fabAdd);
-
         database = AppDatabase.getInstance(this);
-
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -100,21 +97,17 @@ public class ThietBiActivity extends AppCompatActivity {
         });
 
         btnBack.setOnClickListener(v -> finish());
-
         recyclerViewThietBi.setLayoutManager(new LinearLayoutManager(this));
         thietBiList = new ArrayList<>();
         loaiThietBiList = new ArrayList<>();
         adapter = new ThietBiAdapter(thietBiList, loaiThietBiList, this::showPopupImageDialog);
         recyclerViewThietBi.setAdapter(adapter);
-
         loadData();
-
         adapter.setOnItemClickListener(new ThietBiAdapter.OnItemClickListener() {
             @Override
             public void onEditClick(ThietBi item) {
                 showEditDialog(item);
             }
-
             @Override
             public void onDeleteClick(ThietBi item) {
                 database.thietBiDAO().delete(item);
@@ -122,18 +115,14 @@ public class ThietBiActivity extends AppCompatActivity {
                 Toast.makeText(ThietBiActivity.this, "Đã xóa: " + item.getTenThietBi(), Toast.LENGTH_SHORT).show();
             }
         });
-
         fabAdd.setOnClickListener(v -> showAddDialog());
-
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 filterList(s.toString());
             }
-
             @Override
             public void afterTextChanged(Editable s) {}
         });
@@ -151,19 +140,15 @@ public class ThietBiActivity extends AppCompatActivity {
     }
 
     private void showPopupImageDialog(String imageUrl) {
-        // Dim the background
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.alpha = 0.5f; // Reduce brightness to 50%
+        layoutParams.alpha = 0.5f;
         getWindow().setAttributes(layoutParams);
-
         Dialog popupDialog = new Dialog(this);
         popupDialog.setContentView(R.layout.dialog_fullscreen_image);
         popupDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
         ImageView popupImageView = popupDialog.findViewById(R.id.popupImageView);
         ImageButton btnClose = popupDialog.findViewById(R.id.btnClose);
 
-        // Load image
         if (imageUrl != null && !imageUrl.isEmpty()) {
             Glide.with(this)
                     .load(Uri.parse(imageUrl))
@@ -189,10 +174,8 @@ public class ThietBiActivity extends AppCompatActivity {
         popupImageView.setOnClickListener(dismissListener);
         popupDialog.getWindow().getDecorView().setOnClickListener(dismissListener);
         btnClose.setOnClickListener(dismissListener);
-
         popupImageView.setAlpha(0f);
         popupImageView.animate().alpha(1f).setDuration(300).start();
-
         popupDialog.show();
     }
 
@@ -200,7 +183,6 @@ public class ThietBiActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_edit_thiet_bi);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
         TextInputEditText edtMaThietBi = dialog.findViewById(R.id.edtMaThietBi);
         TextInputEditText edtTenThietBi = dialog.findViewById(R.id.edtTenThietBi);
         TextInputEditText edtXuatXu = dialog.findViewById(R.id.edtXuatXu);
@@ -210,7 +192,6 @@ public class ThietBiActivity extends AppCompatActivity {
         MaterialButton btnChonHinh = dialog.findViewById(R.id.btnChonHinh);
         Spinner spinnerLoaiThietBi = dialog.findViewById(R.id.spinnerLoaiThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
-
         List<String> loaiThietBiNames = new ArrayList<>();
         for (LoaiThietBi loai : loaiThietBiList) {
             loaiThietBiNames.add(loai.getTenthietbi());
@@ -218,7 +199,6 @@ public class ThietBiActivity extends AppCompatActivity {
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, loaiThietBiNames);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoaiThietBi.setAdapter(spinnerAdapter);
-
         edtMaThietBi.setText(item.getMaThietBi());
         edtTenThietBi.setText(item.getTenThietBi());
         edtXuatXu.setText(item.getXuatXu());
@@ -235,7 +215,6 @@ public class ThietBiActivity extends AppCompatActivity {
             imgThietBi.setImageResource(R.drawable.ic_camera);
         }
 
-        // Click to show pop-up
         imgThietBi.setOnClickListener(v -> showPopupImageDialog(item.getImageUrl()));
 
         for (int i = 0; i < loaiThietBiList.size(); i++) {
@@ -306,7 +285,6 @@ public class ThietBiActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_edit_thiet_bi);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
         TextView tvTitle = dialog.findViewById(R.id.tvTitle);
         TextInputEditText edtMaThietBi = dialog.findViewById(R.id.edtMaThietBi);
         TextInputEditText edtTenThietBi = dialog.findViewById(R.id.edtTenThietBi);
@@ -317,7 +295,6 @@ public class ThietBiActivity extends AppCompatActivity {
         MaterialButton btnChonHinh = dialog.findViewById(R.id.btnChonHinh);
         Spinner spinnerLoaiThietBi = dialog.findViewById(R.id.spinnerLoaiThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
-
         tvTitle.setText("Thêm thiết bị");
         edtMaThietBi.setText("");
         edtTenThietBi.setText("");
@@ -326,17 +303,16 @@ public class ThietBiActivity extends AppCompatActivity {
         edtTinhTrang.setText("");
         imgThietBi.setImageResource(R.drawable.ic_camera);
         selectedImageUri = null;
-
         imgThietBi.setOnClickListener(v -> showPopupImageDialog(null));
 
         List<String> loaiThietBiNames = new ArrayList<>();
+
         for (LoaiThietBi loai : loaiThietBiList) {
             loaiThietBiNames.add(loai.getTenthietbi());
         }
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, loaiThietBiNames);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLoaiThietBi.setAdapter(spinnerAdapter);
-
         btnChonHinh.setOnClickListener(v -> {
             dialogImageView = imgThietBi;
             Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);

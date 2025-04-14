@@ -83,18 +83,15 @@ public class LoaiThietBiActivity extends AppCompatActivity {
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // Không cần xử lý
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Lọc dữ liệu khi người dùng nhập
                 filterList(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                // Không cần xử lý
             }
         });
     }
@@ -113,11 +110,9 @@ public class LoaiThietBiActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_edit_loai_thiet_bi);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
         TextInputEditText edtMaThietBi = dialog.findViewById(R.id.edtMaThietBi);
         TextInputEditText edtTenThietBi = dialog.findViewById(R.id.edtTenThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
-
         edtMaThietBi.setText(item.getMathietbi());
         edtTenThietBi.setText(item.getTenthietbi());
 
@@ -146,12 +141,10 @@ public class LoaiThietBiActivity extends AppCompatActivity {
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_edit_loai_thiet_bi);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
         TextView tvTitle = dialog.findViewById(R.id.tvTitle);
         TextInputEditText edtMaThietBi = dialog.findViewById(R.id.edtMaThietBi);
         TextInputEditText edtTenThietBi = dialog.findViewById(R.id.edtTenThietBi);
         MaterialButton btnSave = dialog.findViewById(R.id.btnSave);
-
         tvTitle.setText("Thêm loại thiết bị");
         edtMaThietBi.setText("");
         edtTenThietBi.setText("");

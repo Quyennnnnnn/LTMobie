@@ -94,7 +94,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
 
-        // Xử lý sự kiện tìm kiếm
         searchViewCTSD.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -120,7 +119,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         edtNgaySuDungCTSD = dialogCTSD.findViewById(R.id.etNgaySuDungCTSD);
         btnLuuCTSD = dialogCTSD.findViewById(R.id.btnSaveCTSD);
 
-        // Cài đặt Spinner cho Phòng học
         List<String> phongHocNames = new ArrayList<>();
         for (PhongHoc ph : listPhongHocCTSD) {
             phongHocNames.add(ph.getTenPhongHoc());
@@ -129,7 +127,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         phongHocAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPhongHocCTSD.setAdapter(phongHocAdapter);
 
-        // Cài đặt Spinner cho Thiết bị
         List<String> thietBiNames = new ArrayList<>();
         for (ThietBi tb : listThietBiCTSD) {
             thietBiNames.add(tb.getTenThietBi());
@@ -138,7 +135,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         thietBiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerThietBiCTSD.setAdapter(thietBiAdapter);
 
-        // Cài đặt Spinner cho Trạng thái
         List<String> trangThaiList = new ArrayList<>();
         trangThaiList.add("Đang sử dụng");
         trangThaiList.add("Không sử dụng");
@@ -146,7 +142,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         trangThaiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTrangThaiCTSD.setAdapter(trangThaiAdapter);
 
-        // Cài đặt DatePicker cho Ngày sử dụng
         edtNgaySuDungCTSD.setOnClickListener(v -> {
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH);
@@ -156,14 +151,13 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                     ChiTietSuDungActivity.this,
                     (view, year1, month1, dayOfMonth) -> {
                         calendar.set(year1, month1, dayOfMonth);
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                         edtNgaySuDungCTSD.setText(sdf.format(calendar.getTime()));
                     },
                     year, month, day);
             datePickerDialog.show();
         });
 
-        // Điền dữ liệu nếu đang chỉnh sửa
         if (chiTietSuDung != null) {
             for (int i = 0; i < listPhongHocCTSD.size(); i++) {
                 if (listPhongHocCTSD.get(i).getId() == chiTietSuDung.getPhongHocId()) {
@@ -181,7 +175,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
             edtNgaySuDungCTSD.setText(chiTietSuDung.getNgaySuDung());
         } else {
             edtNgaySuDungCTSD.setText("");
-            spinnerTrangThaiCTSD.setSelection(0); // Mặc định là "Đang sử dụng"
+            spinnerTrangThaiCTSD.setSelection(0);
         }
 
         btnLuuCTSD.setOnClickListener(new View.OnClickListener() {
@@ -192,7 +186,6 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                 String trangThai = spinnerTrangThaiCTSD.getSelectedItem().toString();
                 String ngaySuDung = edtNgaySuDungCTSD.getText().toString().trim();
 
-                // Kiểm tra dữ liệu
                 if (selectedPhongHocIndex == -1) {
                     Toast.makeText(ChiTietSuDungActivity.this, "Vui lòng chọn phòng học", Toast.LENGTH_SHORT).show();
                     return;

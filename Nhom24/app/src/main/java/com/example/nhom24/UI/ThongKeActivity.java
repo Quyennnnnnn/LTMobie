@@ -60,7 +60,6 @@ public class ThongKeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thong_ke);
 
-        // Ánh xạ view
         btnBack = findViewById(R.id.btnBack);
         etStartDate = findViewById(R.id.etStartDate);
         etEndDate = findViewById(R.id.etEndDate);
@@ -69,13 +68,11 @@ public class ThongKeActivity extends AppCompatActivity {
         btnChart = findViewById(R.id.btnChart);
         rvThongKe = findViewById(R.id.rvThongKe);
 
-        // Khởi tạo database và executor
         database = AppDatabase.getInstance(this);
         executorService = Executors.newSingleThreadExecutor();
         calendar = Calendar.getInstance();
         sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
-        // Khởi tạo danh sách và adapter
         thongKeList = new ArrayList<>();
         filteredThongKeList = new ArrayList<>();
         chiTietSuDungList = new ArrayList<>();
@@ -85,34 +82,26 @@ public class ThongKeActivity extends AppCompatActivity {
         rvThongKe.setLayoutManager(new LinearLayoutManager(this));
         rvThongKe.setAdapter(adapter);
 
-        // Load dữ liệu ban đầu
         loadInitialData();
 
-        // Xử lý nút Back
         btnBack.setOnClickListener(v -> finish());
 
-        // Xử lý chọn ngày
         etStartDate.setOnClickListener(v -> showDatePickerDialog(etStartDate));
         etEndDate.setOnClickListener(v -> showDatePickerDialog(etEndDate));
 
-        // Xử lý nút lọc theo ngày
         btnFilter.setOnClickListener(v -> filterByDate());
 
-        // Xử lý tìm kiếm theo tên thiết bị
         edtSearchDevice.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 filterByDeviceName(s.toString());
             }
-
             @Override
             public void afterTextChanged(Editable s) {}
         });
 
-        // Xử lý nút X trên các EditText
         setupClearButton(etStartDate);
         setupClearButton(etEndDate);
         setupClearButton(edtSearchDevice);
@@ -131,7 +120,6 @@ public class ThongKeActivity extends AppCompatActivity {
                 return;
             }
 
-            // Chuyển sang ChartActivity
             Intent intent = new Intent(ThongKeActivity.this, ChartActivity.class);
             intent.putExtra("start_date", startDate);
             intent.putExtra("end_date", endDate);
@@ -141,7 +129,6 @@ public class ThongKeActivity extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     private void setupClearButton(final EditText editText) {
-        // Ẩn biểu tượng X khi EditText rỗng
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -149,7 +136,6 @@ public class ThongKeActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 0) {
-                    // Sử dụng ContextCompat.getDrawable để tương thích với các phiên bản Android
                     Drawable drawable = ContextCompat.getDrawable(ThongKeActivity.this, R.drawable.ic_clear);
                     int size = (int) (15 * getResources().getDisplayMetrics().density); // Kích thước 20dp
                     if (drawable != null) {
@@ -165,14 +151,12 @@ public class ThongKeActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {}
         });
 
-        // Xử lý sự kiện nhấn vào biểu tượng X
         editText.setOnTouchListener((v, event) -> {
             if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
                 if (editText.getCompoundDrawables()[2] != null) {
                     if (event.getRawX() >= (editText.getRight() - editText.getCompoundDrawables()[2].getBounds().width() - editText.getPaddingRight())) {
                         editText.setText(""); // Xóa nội dung
                         if (editText == etStartDate || editText == etEndDate) {
-                            // Nếu là ô ngày, cập nhật lại danh sách về trạng thái ban đầu
                             executorService.execute(() -> {
                                 List<ThongKeItem> newThongKeList = aggregateData(chiTietSuDungList);
                                 runOnUiThread(() -> {
@@ -208,15 +192,10 @@ public class ThongKeActivity extends AppCompatActivity {
 
     private void loadInitialData() {
         executorService.execute(() -> {
-            // Lấy dữ liệu từ database
             thietBiList = database.thietBiDAO().getAll();
             phongHocList = database.phongHocDAO().getAll();
             chiTietSuDungList = database.chiTietSuDungDAO().getAllChiTietSuDung();
-
-            // Tổng hợp dữ liệu thống kê
             thongKeList = aggregateData(chiTietSuDungList);
-
-            // Cập nhật UI trên main thread
             runOnUiThread(() -> {
                 filteredThongKeList = new ArrayList<>(thongKeList);
                 adapter.updateList(filteredThongKeList);
@@ -225,14 +204,12 @@ public class ThongKeActivity extends AppCompatActivity {
     }
 
     private List<ThongKeItem> aggregateData(List<ChiTietSuDung> chiTietList) {
-        // Sử dụng HashMap để nhóm dữ liệu theo thietBiId, phongHocId, và ngaySuDung
         Map<String, Integer> usageCountMap = new HashMap<>();
         for (ChiTietSuDung chiTiet : chiTietList) {
             String key = chiTiet.getThietBiId() + "|" + chiTiet.getPhongHocId() + "|" + chiTiet.getNgaySuDung();
-            usageCountMap.put(key, usageCountMap.getOrDefault(key, 0) + 1); // Đếm số lần mượn
+            usageCountMap.put(key, usageCountMap.getOrDefault(key, 0) + 1);
         }
 
-        // Chuyển dữ liệu thành danh sách ThongKeItem
         List<ThongKeItem> result = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : usageCountMap.entrySet()) {
             String[] parts = entry.getKey().split("\\|");
@@ -241,7 +218,6 @@ public class ThongKeActivity extends AppCompatActivity {
             String ngaySuDung = parts[2];
             int soLuongDaMuon = entry.getValue();
 
-            // Tìm tên thiết bị
             String tenThietBi = "";
             for (ThietBi tb : thietBiList) {
                 if (tb.getId() == thietBiId) {
@@ -250,7 +226,6 @@ public class ThongKeActivity extends AppCompatActivity {
                 }
             }
 
-            // Tìm mã phòng
             String maPhong = "";
             for (PhongHoc ph : phongHocList) {
                 if (ph.getId() == phongHocId) {
@@ -280,7 +255,6 @@ public class ThongKeActivity extends AppCompatActivity {
         }
 
         executorService.execute(() -> {
-            // Lọc dữ liệu theo khoảng thời gian
             List<ChiTietSuDung> filteredChiTietList = new ArrayList<>();
             try {
                 Date startDate = sdf.parse(startDateStr);
@@ -298,7 +272,6 @@ public class ThongKeActivity extends AppCompatActivity {
                 return;
             }
 
-            // Tổng hợp lại dữ liệu thống kê
             List<ThongKeItem> newThongKeList = aggregateData(filteredChiTietList);
             runOnUiThread(() -> {
                 thongKeList = newThongKeList;
