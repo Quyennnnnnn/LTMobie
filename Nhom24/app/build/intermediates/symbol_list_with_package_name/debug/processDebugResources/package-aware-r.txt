@@ -2999,6 +2999,9 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_button
+drawable bg_gradient
+drawable bg_ui
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3015,6 +3018,7 @@ drawable design_snackbar_background
 drawable gradient_background
 drawable gradient_background_appbar
 drawable gradient_background_card
+drawable ic_arrow_back
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3023,6 +3027,7 @@ drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_camera
+drawable ic_clear
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_delete
@@ -3115,6 +3120,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable search_background
+drawable search_background2
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3223,11 +3229,13 @@ id bounceEnd
 id bounceStart
 id btnBack
 id btnChangePassword
+id btnChart
 id btnChiTietSuDung
 id btnChonHinh
 id btnClose
 id btnDelete
 id btnEdit
+id btnFilter
 id btnLoaiThietBi
 id btnLogin
 id btnMenu
@@ -3324,6 +3332,7 @@ id edtOldPassword
 id edtPassword
 id edtPhone
 id edtSearch
+id edtSearchDevice
 id edtSoLuong
 id edtTaiKhoan
 id edtTenThietBi
@@ -3336,10 +3345,12 @@ id endToStart
 id enterAlways
 id enterAlwaysCollapsed
 id escape
+id etEndDate
 id etMaPhongHoc
 id etNgaySuDungCTSD
 id etSearch
 id etSearchCTSD
+id etStartDate
 id etTenPhongHoc
 id exitUntilCollapsed
 id expand_activities_button
@@ -3530,6 +3541,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id pieChart
 id pin
 id pooling_container_listener_holder_tag
 id popupImageView
@@ -3552,7 +3564,9 @@ id right_side
 id rounded
 id row_index_key
 id rvChiTietSuDung
+id rvNhanVien
 id rvPhongHoc
+id rvThongKe
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3680,11 +3694,16 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvDanhSach
+id tvEmail
 id tvLoaiThietBi
 id tvMaLoaiThietBi
+id tvMaPhong
 id tvMaPhongHoc
 id tvMaThietBi
+id tvNgaySuDung
 id tvNgaySuDungCTSD
+id tvPhone
 id tvPhongHocCTSD
 id tvSoLuong
 id tvTenLoaiThietBi
@@ -3836,6 +3855,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_chart
 layout activity_chi_tiet_su_dung
 layout activity_dang_ky
 layout activity_dang_nhap
@@ -3873,8 +3893,10 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_chi_tiet_su_dung
 layout item_loai_thiet_bi
+layout item_nhan_vien
 layout item_phong_hoc
 layout item_thiet_bi
+layout item_thong_ke
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

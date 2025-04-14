@@ -9,21 +9,24 @@
         android:hint="Mật khẩu cũ"
         android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/edtNewPassword"
         android:hint="Mật khẩu mới"
         android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
 
     <EditText
         android:id="@+id/edtConfirmPassword"
         android:hint="Xác nhận mật khẩu mới"
         android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnChangePassword"

@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:background="#47169D"
+                android:background="@drawable/bg_ui"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp">
 

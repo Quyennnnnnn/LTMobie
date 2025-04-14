@@ -12,14 +12,15 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_background">
+        android:background="@drawable/bg_ui"
+        >
 
         <!-- AppBarLayout cho Header -->
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient_background"
+            android:background="@drawable/bg_ui"
             android:elevation="4dp">
 
             <LinearLayout
@@ -92,7 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:background="@drawable/gradient_background"
+                        android:background="@drawable/bg_ui"
                         android:padding="8dp">
 
                         <!-- Hàng 1 -->
@@ -113,7 +114,9 @@
                                 android:text="Loại thiết bị"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
+
                                 app:icon="@android:drawable/ic_menu_manage"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"
@@ -134,7 +137,8 @@
                                 android:text="Thiết bị"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
                                 app:icon="@android:drawable/ic_menu_camera"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"
@@ -163,7 +167,8 @@
                                 android:text="Chi tiết"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
                                 app:icon="@android:drawable/ic_menu_info_details"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"
@@ -183,7 +188,8 @@
                                 android:text="Phòng học"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
                                 app:icon="@android:drawable/ic_menu_myplaces"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"
@@ -212,7 +218,8 @@
                                 android:text="Nhân viên"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
                                 app:icon="@android:drawable/ic_menu_my_calendar"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"
@@ -232,7 +239,8 @@
                                 android:text="Thống kê"
                                 android:textSize="16sp"
                                 android:textColor="#FFFFFF"
-                                android:backgroundTint="#4A148C"
+                                android:background="@drawable/bg_button"
+                                app:backgroundTint="@null"
                                 app:icon="@android:drawable/ic_menu_report_image"
                                 app:iconTint="#FFFFFF"
                                 app:strokeColor="#FFFFFF"

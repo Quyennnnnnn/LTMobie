@@ -5,6 +5,11 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chart.xml">
+        <config>
+          <theme>@style/Theme.Nhom24</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_chi_tiet_su_dung.xml">
         <config>
           <theme>@style/Theme.Nhom24</theme>
@@ -100,12 +105,22 @@
           <theme>@style/Theme.Nhom24</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_nhan_vien.xml">
+        <config>
+          <theme>@style/Theme.Nhom24</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_phong_hoc.xml">
         <config>
           <theme>@style/Theme.Nhom24</theme>
         </config>
       </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_thiet_bi.xml">
+        <config>
+          <theme>@style/Theme.Nhom24</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_thong_ke.xml">
         <config>
           <theme>@style/Theme.Nhom24</theme>
         </config>
@@ -133,22 +148,35 @@
   <component name="ChangeListManager">
     <list default="true" id="0f6e3e54-c32b-442f-bce3-5a8850e27801" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ChiTietSuDungAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/NhanVienAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThongKeAdapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ChiTietSuDungDAO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/PhongHocDAO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ChiTietSuDung.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/PhongHoc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThongKeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ChartActivity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DoiMatKhauActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_gradient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_ui.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_appbar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/gradient_background_card.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_clear.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_face.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/search_background2.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/wave_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chart.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_doi_mat_khau.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_chi_tiet_su_dung.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_phong_hoc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_fullscreen_image.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_chi_tiet_su_dung.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_nhan_vien.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_phong_hoc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_thong_ke.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/nav_menu.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/nav_menu.xml" afterDir="false" />
@@ -247,6 +275,7 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Adapter/ThietBiAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/ThietBiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/DAO/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Database/AppDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/Model/ThietBi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ChiTietSuDungActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ChiTietSuDungActivity.java" afterDir="false" />
@@ -254,18 +283,23 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/DangNhap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/Home.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/LoaiThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/LoaiThietBiActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/NhanVienActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/NhanVienActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/PhongHocActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/PhongHocActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThietBiActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThongKeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/nhom24/UI/ThongKeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chi_tiet_su_dung.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chi_tiet_su_dung.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_ky.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_nhap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dang_nhap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_loai_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_loai_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_nhan_vien.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_nhan_vien.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_phong_hoc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_phong_hoc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_thong_ke.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_thong_ke.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_thiet_bi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_loai_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_loai_thiet_bi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_thiet_bi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_thiet_bi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -315,14 +349,14 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/Nhom24"
+    "last_opened_file_path": "C:/Users/ADMIN/TestLogin"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\drawable" />
       <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\layout" />
       <recent name="C:\Users\ADMIN\Nhom24\app\src\main\java\com\example\nhom24\Adapter" />
-      <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\drawable" />
       <recent name="C:\Users\ADMIN\Nhom24\app\src\main\res\values" />
     </key>
     <key name="android.template.-1055555594">
@@ -333,9 +367,10 @@
       <recent name="com.example.nhom24.UI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.nhom24.Adapter" />
+      <recent name="com.example.nhom24.UI" />
       <recent name="com.example.nhom24.Model" />
       <recent name="com.example.nhom24.DAO" />
-      <recent name="com.example.nhom24.Adapter" />
     </key>
   </component>
   <component name="RunManager">

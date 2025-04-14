@@ -1,10 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.ThongKeActivity">
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Thanh tiêu đề có nút quay lại -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp">
+
+        <!-- Nút quay lại -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Back"
+            app:tint="#212121" />
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thống Kê Sử Dụng"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <!-- Ngày bắt đầu - Ngày kết thúc -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/etStartDate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/search_background2"
+            android:hint="2023-04-28"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:focusable="false"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_clear"
+            android:drawablePadding="12dp"
+            android:paddingEnd="16dp" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etEndDate"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:background="@drawable/search_background2"
+            android:hint="2023-04-28"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:focusable="false"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_clear"
+            android:drawablePadding="12dp"
+            android:paddingEnd="16dp" />
+    </LinearLayout>
+
+    <!-- Nút lọc -->
+    <Button
+        android:id="@+id/btnFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LỌC"
+        android:backgroundTint="#9C27B0"
+        android:textColor="#FFF"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp" />
+
+    <!-- Ô tìm kiếm theo tên thiết bị -->
+    <EditText
+        android:id="@+id/edtSearchDevice"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/search_background2"
+        android:hint="Tìm kiếm theo tên thiết bị"
+        android:textColor="#000000"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:drawableEnd="@drawable/ic_clear"
+        android:drawablePadding="12dp" />
+
+    <!-- Header cho RecyclerView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#BCB3B3"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Ngày sử dụng"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Tên thiết bị"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Mã phòng"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="SL"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- RecyclerView hiển thị bảng -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvThongKe"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp" />
+
+    <!-- Hai nút dưới cùng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnChart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:text="XEM CHART"
+            android:backgroundTint="#7B1FA2"
+            android:textColor="#FFF"
+            android:layout_marginEnd="8dp" />
+
+    </LinearLayout>
+</LinearLayout>

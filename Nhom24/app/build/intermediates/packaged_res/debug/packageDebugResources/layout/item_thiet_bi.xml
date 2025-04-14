@@ -7,12 +7,12 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="#FFFFFF">
+    app:cardBackgroundColor="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#47169D"
+        android:background="@drawable/bg_ui"
         android:padding="12dp">
 
         <!-- Mã thiết bị -->
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="(TB001)"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:ellipsize="end"
             android:maxLines="1"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Tên thiết bị"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             android:ellipsize="end"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Xuất xứ: Việt Nam"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:ellipsize="end"
             android:maxLines="1"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Loại: Điện tử"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:ellipsize="end"
             android:maxLines="1"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Tình trạng: Mới"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:ellipsize="end"
             android:maxLines="1"
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="SL: 10"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="14sp"
             android:ellipsize="end"
             android:maxLines="1"
@@ -117,6 +117,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:src="@android:drawable/ic_menu_edit"
+            android:tint="@color/black"
             android:contentDescription="Sửa"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_marginStart="8dp"

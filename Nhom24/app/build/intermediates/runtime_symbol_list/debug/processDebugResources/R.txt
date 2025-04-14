@@ -2998,6 +2998,9 @@ int drawable abc_textfield_search_material 0x7f070077
 int drawable abc_vector_test 0x7f070078
 int drawable avd_hide_password 0x7f070079
 int drawable avd_show_password 0x7f07007a
+int drawable bg_button 0x7f0700f7
+int drawable bg_gradient 0x7f0700f3
+int drawable bg_ui 0x7f0700f8
 int drawable btn_checkbox_checked_mtrl 0x7f07007b
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07007c
 int drawable btn_checkbox_unchecked_mtrl 0x7f07007d
@@ -3014,6 +3017,7 @@ int drawable design_snackbar_background 0x7f070087
 int drawable gradient_background 0x7f070088
 int drawable gradient_background_appbar 0x7f070089
 int drawable gradient_background_card 0x7f07008a
+int drawable ic_arrow_back 0x7f0700f4
 int drawable ic_arrow_back_black_24 0x7f07008b
 int drawable ic_call_answer 0x7f07008c
 int drawable ic_call_answer_low 0x7f07008d
@@ -3022,6 +3026,7 @@ int drawable ic_call_answer_video_low 0x7f07008f
 int drawable ic_call_decline 0x7f070090
 int drawable ic_call_decline_low 0x7f070091
 int drawable ic_camera 0x7f0700f1
+int drawable ic_clear 0x7f0700f5
 int drawable ic_clear_black_24 0x7f070092
 int drawable ic_clock_black_24dp 0x7f070093
 int drawable ic_delete 0x7f070094
@@ -3114,6 +3119,7 @@ int drawable notification_template_icon_low_bg 0x7f0700e9
 int drawable notification_tile_bg 0x7f0700ea
 int drawable notify_panel_notification_icon_bg 0x7f0700eb
 int drawable search_background 0x7f0700ec
+int drawable search_background2 0x7f0700f6
 int drawable test_level_drawable 0x7f0700ed
 int drawable tooltip_frame_dark 0x7f0700ee
 int drawable tooltip_frame_light 0x7f0700ef
@@ -3222,11 +3228,13 @@ int id bounceEnd 0x7f080063
 int id bounceStart 0x7f080064
 int id btnBack 0x7f080065
 int id btnChangePassword 0x7f080244
+int id btnChart 0x7f08025e
 int id btnChiTietSuDung 0x7f080066
 int id btnChonHinh 0x7f080232
 int id btnClose 0x7f080239
 int id btnDelete 0x7f080067
 int id btnEdit 0x7f080068
+int id btnFilter 0x7f08025f
 int id btnLoaiThietBi 0x7f080069
 int id btnLogin 0x7f08006a
 int id btnMenu 0x7f08006c
@@ -3323,6 +3331,7 @@ int id edtOldPassword 0x7f080246
 int id edtPassword 0x7f0800c3
 int id edtPhone 0x7f0800c4
 int id edtSearch 0x7f0800c5
+int id edtSearchDevice 0x7f080260
 int id edtSoLuong 0x7f0800c6
 int id edtTaiKhoan 0x7f0800c7
 int id edtTenThietBi 0x7f0800c8
@@ -3335,10 +3344,12 @@ int id endToStart 0x7f0800cd
 int id enterAlways 0x7f0800ce
 int id enterAlwaysCollapsed 0x7f0800cf
 int id escape 0x7f0800d0
+int id etEndDate 0x7f080261
 int id etMaPhongHoc 0x7f080248
 int id etNgaySuDungCTSD 0x7f080249
 int id etSearch 0x7f08024a
 int id etSearchCTSD 0x7f08024b
+int id etStartDate 0x7f080262
 int id etTenPhongHoc 0x7f08024c
 int id exitUntilCollapsed 0x7f0800d1
 int id expand_activities_button 0x7f0800d2
@@ -3529,6 +3540,7 @@ int id path 0x7f08017d
 int id pathRelative 0x7f08017e
 int id peekHeight 0x7f08017f
 int id percent 0x7f080180
+int id pieChart 0x7f080263
 int id pin 0x7f080181
 int id pooling_container_listener_holder_tag 0x7f080182
 int id popupImageView 0x7f08023b
@@ -3551,7 +3563,9 @@ int id right_side 0x7f080192
 int id rounded 0x7f080193
 int id row_index_key 0x7f080194
 int id rvChiTietSuDung 0x7f080252
+int id rvNhanVien 0x7f080264
 int id rvPhongHoc 0x7f080253
+int id rvThongKe 0x7f080265
 int id save_non_transition_alpha 0x7f080195
 int id save_overlay_view 0x7f080196
 int id sawtooth 0x7f080197
@@ -3679,11 +3693,16 @@ int id transition_position 0x7f08020b
 int id transition_scene_layoutid_cache 0x7f08020c
 int id transition_transform 0x7f08020d
 int id triangle 0x7f08020e
+int id tvDanhSach 0x7f080266
+int id tvEmail 0x7f080267
 int id tvLoaiThietBi 0x7f080236
 int id tvMaLoaiThietBi 0x7f08020f
+int id tvMaPhong 0x7f080268
 int id tvMaPhongHoc 0x7f080257
 int id tvMaThietBi 0x7f080210
+int id tvNgaySuDung 0x7f080269
 int id tvNgaySuDungCTSD 0x7f08025c
+int id tvPhone 0x7f08026a
 int id tvPhongHocCTSD 0x7f080258
 int id tvSoLuong 0x7f080211
 int id tvTenLoaiThietBi 0x7f080212
@@ -3835,6 +3854,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_chart 0x7f0b0081
 int layout activity_chi_tiet_su_dung 0x7f0b001c
 int layout activity_dang_ky 0x7f0b001d
 int layout activity_dang_nhap 0x7f0b001e
@@ -3872,8 +3892,10 @@ int layout ime_base_split_test_activity 0x7f0b0039
 int layout ime_secondary_split_test_activity 0x7f0b003a
 int layout item_chi_tiet_su_dung 0x7f0b007f
 int layout item_loai_thiet_bi 0x7f0b003b
+int layout item_nhan_vien 0x7f0b0082
 int layout item_phong_hoc 0x7f0b0080
 int layout item_thiet_bi 0x7f0b003c
+int layout item_thong_ke 0x7f0b0083
 int layout m3_alert_dialog 0x7f0b003d
 int layout m3_alert_dialog_actions 0x7f0b003e
 int layout m3_alert_dialog_title 0x7f0b003f

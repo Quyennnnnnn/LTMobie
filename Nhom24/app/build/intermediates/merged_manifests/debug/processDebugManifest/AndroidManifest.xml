@@ -63,6 +63,9 @@
             android:name="com.example.nhom24.MainActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.nhom24.UI.ChartActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.nhom24.UI.DangNhap"
             android:exported="true" >
             <intent-filter>

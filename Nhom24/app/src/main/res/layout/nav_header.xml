@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/bg_ui">
 
     <ImageView
         android:id="@+id/nav_profile_image"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Số điện thoại"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:layout_marginTop="8dp"/>
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="email@example.com"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/black"
         android:textSize="14sp"
         android:layout_marginTop="4dp"/>
 

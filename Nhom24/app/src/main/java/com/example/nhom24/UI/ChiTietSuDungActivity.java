@@ -138,7 +138,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                     ChiTietSuDungActivity.this,
                     (view, year1, month1, dayOfMonth) -> {
                         calendar.set(year1, month1, dayOfMonth);
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                         edtNgaySuDungCTSD.setText(sdf.format(calendar.getTime()));
                     },
                     year, month, day);
