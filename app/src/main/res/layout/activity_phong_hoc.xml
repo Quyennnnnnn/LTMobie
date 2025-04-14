@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EDE7F6">
 
-    <!-- Thanh tiêu đề -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#4A148C"
-        app:elevation="4dp">
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Phòng học"
-            app:titleTextColor="@android:color/white"
+            android:background="@android:color/transparent"
             app:navigationIcon="@android:drawable/ic_menu_revert"
-            app:navigationIconTint="@android:color/white" />
+            app:title="Phòng Học"
+            app:titleTextColor="#4A148C" />
 
-        <!-- Thanh tìm kiếm -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,52 +31,29 @@
             app:cardElevation="2dp"
             app:cardBackgroundColor="@android:color/white">
 
-            <LinearLayout
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchViewPH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@android:drawable/ic_menu_search"
-                    android:tint="#4A148C"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="8dp" />
-
-                <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Tìm kiếm phòng học"
-                    android:background="@android:color/transparent"
-                    android:textColor="#212121"
-                    android:textColorHint="#B0BEC5"
-                    android:textSize="16sp" />
-            </LinearLayout>
+                android:layout_margin="8dp"
+                app:queryHint="Tìm kiếm phòng học..." />
         </androidx.cardview.widget.CardView>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Danh sách phòng học -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPhongHoc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:padding="8dp"
-        android:clipToPadding="false" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <!-- Nút thêm -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#4CAF50"
-        app:fabSize="normal"
-        app:tint="@android:color/white" />
+        android:tint="@android:color/white"
+        app:backgroundTint="#4A148C" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
