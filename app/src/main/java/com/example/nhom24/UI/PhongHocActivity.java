@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,12 +26,13 @@ public class PhongHocActivity extends AppCompatActivity {
     private RecyclerView rvPhongHocPH;
     private FloatingActionButton fabAddPH;
     private Toolbar toolbarPH;
+    private SearchView searchViewPH;
     private PhongHocAdapter adapterPH;
     private List<PhongHoc> listPhongHocPH;
     private Dialog dialogPH;
     private EditText edtMaPhongHocPH;
     private EditText edtTenPhongHocPH;
-    private MaterialButton btnLuuPH; // Thay đổi từ ImageView sang MaterialButton
+    private MaterialButton btnLuuPH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class PhongHocActivity extends AppCompatActivity {
         rvPhongHocPH = findViewById(R.id.rvPhongHoc);
         fabAddPH = findViewById(R.id.fabAdd);
         toolbarPH = findViewById(R.id.toolbar);
+        searchViewPH = findViewById(R.id.searchViewPH);
 
         setSupportActionBar(toolbarPH);
         toolbarPH.setNavigationOnClickListener(v -> finish());
@@ -70,6 +73,21 @@ public class PhongHocActivity extends AppCompatActivity {
                 showDialogEditPH(null);
             }
         });
+
+        // Xử lý sự kiện tìm kiếm
+        searchViewPH.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapterPH.filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapterPH.filter(newText);
+                return true;
+            }
+        });
     }
 
     private void showDialogEditPH(PhongHoc phongHoc) {
@@ -78,7 +96,7 @@ public class PhongHocActivity extends AppCompatActivity {
 
         edtMaPhongHocPH = dialogPH.findViewById(R.id.etMaPhongHoc);
         edtTenPhongHocPH = dialogPH.findViewById(R.id.etTenPhongHoc);
-        btnLuuPH = dialogPH.findViewById(R.id.btnSave); // Dòng 89, đã sửa kiểu thành MaterialButton
+        btnLuuPH = dialogPH.findViewById(R.id.btnSave);
 
         if (phongHoc != null) {
             edtMaPhongHocPH.setText(phongHoc.getMaPhongHoc());
