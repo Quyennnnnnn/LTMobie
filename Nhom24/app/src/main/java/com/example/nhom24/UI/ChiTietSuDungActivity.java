@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +37,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
     private RecyclerView rvChiTietSuDungCTSD;
     private FloatingActionButton fabAddCTSD;
     private Toolbar toolbarCTSD;
+    private SearchView searchViewCTSD;
     private ChiTietSuDungAdapter adapterCTSD;
     private List<ChiTietSuDung> listChiTietSuDungCTSD;
     private List<PhongHoc> listPhongHocCTSD;
@@ -56,13 +58,14 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         rvChiTietSuDungCTSD = findViewById(R.id.rvChiTietSuDung);
         fabAddCTSD = findViewById(R.id.fabAddCTSD);
         toolbarCTSD = findViewById(R.id.toolbarCTSD);
+        searchViewCTSD = findViewById(R.id.searchViewCTSD);
 
         setSupportActionBar(toolbarCTSD);
         toolbarCTSD.setNavigationOnClickListener(v -> finish());
 
         listChiTietSuDungCTSD = AppDatabase.getInstance(this).chiTietSuDungDAO().getAllChiTietSuDung();
-        listPhongHocCTSD = AppDatabase.getInstance(this).phongHocDAO().getAll(); // Sửa từ getAll() thành getAllPhongHoc()
-        listThietBiCTSD = AppDatabase.getInstance(this).thietBiDAO().getAll(); // Sửa từ getAll() thành getAllThietBi()
+        listPhongHocCTSD = AppDatabase.getInstance(this).phongHocDAO().getAll();
+        listThietBiCTSD = AppDatabase.getInstance(this).thietBiDAO().getAll();
 
         adapterCTSD = new ChiTietSuDungAdapter(this, listChiTietSuDungCTSD, listPhongHocCTSD, listThietBiCTSD, new ChiTietSuDungAdapter.OnItemClickListener() {
             @Override
@@ -90,6 +93,21 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
         });
 
         calendar = Calendar.getInstance();
+
+        // Xử lý sự kiện tìm kiếm
+        searchViewCTSD.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapterCTSD.filter(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapterCTSD.filter(newText);
+                return true;
+            }
+        });
     }
 
     private void showDialogEditCTSD(ChiTietSuDung chiTietSuDung) {
@@ -138,7 +156,7 @@ public class ChiTietSuDungActivity extends AppCompatActivity {
                     ChiTietSuDungActivity.this,
                     (view, year1, month1, dayOfMonth) -> {
                         calendar.set(year1, month1, dayOfMonth);
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                         edtNgaySuDungCTSD.setText(sdf.format(calendar.getTime()));
                     },
                     year, month, day);

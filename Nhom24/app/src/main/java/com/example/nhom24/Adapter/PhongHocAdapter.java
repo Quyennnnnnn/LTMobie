@@ -13,48 +13,70 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nhom24.Model.PhongHoc;
 import com.example.nhom24.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhongHocAdapter extends RecyclerView.Adapter<PhongHocAdapter.PhongHocViewHolder> {
-    private Context context;
-    private List<PhongHoc> listPhongHoc;
-    private OnItemClickListener listener;
+    private Context contextPH;
+    private List<PhongHoc> listPhongHocPH;
+    private List<PhongHoc> listPhongHocFull; // Danh sách đầy đủ để lọc
+    private OnItemClickListener listenerPH;
 
     public interface OnItemClickListener {
         void onEditClick(PhongHoc phongHoc);
+
         void onDeleteClick(PhongHoc phongHoc);
     }
 
     public PhongHocAdapter(Context context, List<PhongHoc> listPhongHoc, OnItemClickListener listener) {
-        this.context = context;
-        this.listPhongHoc = listPhongHoc;
-        this.listener = listener;
+        this.contextPH = context;
+        this.listPhongHocPH = listPhongHoc;
+        this.listPhongHocFull = new ArrayList<>(listPhongHoc); // Sao chép danh sách đầy đủ
+        this.listenerPH = listener;
     }
 
     @NonNull
     @Override
     public PhongHocViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_phong_hoc, parent, false);
+        View view = LayoutInflater.from(contextPH).inflate(R.layout.item_phong_hoc, parent, false);
         return new PhongHocViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PhongHocViewHolder holder, int position) {
-        PhongHoc phongHoc = listPhongHoc.get(position);
-        holder.tvMaPhongHoc.setText("(" + phongHoc.getMaPhongHoc() + ")");
-        holder.tvTenPhongHoc.setText(phongHoc.getTenPhongHoc());
+        PhongHoc phongHoc = listPhongHocPH.get(position);
+        holder.tvMaPhongHoc.setText("Mã phòng: " + phongHoc.getMaPhongHoc());
+        holder.tvTenPhongHoc.setText("Tên phòng: " + phongHoc.getTenPhongHoc());
 
-        holder.ivEdit.setOnClickListener(v -> listener.onEditClick(phongHoc));
-        holder.ivDelete.setOnClickListener(v -> listener.onDeleteClick(phongHoc));
+        holder.ivEdit.setOnClickListener(v -> listenerPH.onEditClick(phongHoc));
+        holder.ivDelete.setOnClickListener(v -> listenerPH.onDeleteClick(phongHoc));
     }
 
     @Override
     public int getItemCount() {
-        return listPhongHoc.size();
+        return listPhongHocPH.size();
     }
 
     public void updateListPH(List<PhongHoc> newList) {
-        this.listPhongHoc = newList;
+        this.listPhongHocPH = newList;
+        this.listPhongHocFull = new ArrayList<>(newList); // Cập nhật danh sách đầy đủ
+        notifyDataSetChanged();
+    }
+
+    // Hàm lọc danh sách dựa trên từ khóa tìm kiếm
+    public void filter(String query) {
+        listPhongHocPH.clear();
+        if (query.isEmpty()) {
+            listPhongHocPH.addAll(listPhongHocFull);
+        } else {
+            query = query.toLowerCase();
+            for (PhongHoc phongHoc : listPhongHocFull) {
+                if (phongHoc.getMaPhongHoc().toLowerCase().contains(query) ||
+                        phongHoc.getTenPhongHoc().toLowerCase().contains(query)) {
+                    listPhongHocPH.add(phongHoc);
+                }
+            }
+        }
         notifyDataSetChanged();
     }
 

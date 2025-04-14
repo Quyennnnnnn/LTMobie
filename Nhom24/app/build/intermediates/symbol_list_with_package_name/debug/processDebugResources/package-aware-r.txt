@@ -3349,7 +3349,6 @@ id etEndDate
 id etMaPhongHoc
 id etNgaySuDungCTSD
 id etSearch
-id etSearchCTSD
 id etStartDate
 id etTenPhongHoc
 id exitUntilCollapsed
@@ -3577,6 +3576,8 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id searchViewCTSD
+id searchViewPH
 id search_badge
 id search_bar
 id search_button
@@ -3653,6 +3654,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3666,6 +3668,8 @@ id tilConfirmPassword
 id tilEmail
 id tilMaThietBi
 id tilMatKhau
+id tilNewPassword
+id tilOldPassword
 id tilPassword
 id tilPhone
 id tilSoLuong

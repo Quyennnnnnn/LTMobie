@@ -62,7 +62,6 @@ id etEndDate
 id etMaPhongHoc
 id etNgaySuDungCTSD
 id etSearch
-id etSearchCTSD
 id etStartDate
 id etTenPhongHoc
 id fabAdd
@@ -89,14 +88,19 @@ id rvChiTietSuDung
 id rvNhanVien
 id rvPhongHoc
 id rvThongKe
+id searchViewCTSD
+id searchViewPH
 id spinnerLoaiThietBi
 id spinnerPhongHocCTSD
 id spinnerThietBiCTSD
 id spinnerTrangThaiCTSD
+id textView
 id tilConfirmPassword
 id tilEmail
 id tilMaThietBi
 id tilMatKhau
+id tilNewPassword
+id tilOldPassword
 id tilPassword
 id tilPhone
 id tilSoLuong

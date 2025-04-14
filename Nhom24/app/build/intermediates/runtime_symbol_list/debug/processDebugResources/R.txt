@@ -3348,7 +3348,6 @@ int id etEndDate 0x7f080261
 int id etMaPhongHoc 0x7f080248
 int id etNgaySuDungCTSD 0x7f080249
 int id etSearch 0x7f08024a
-int id etSearchCTSD 0x7f08024b
 int id etStartDate 0x7f080262
 int id etTenPhongHoc 0x7f08024c
 int id exitUntilCollapsed 0x7f0800d1
@@ -3576,6 +3575,8 @@ int id scrollIndicatorDown 0x7f08019b
 int id scrollIndicatorUp 0x7f08019c
 int id scrollView 0x7f08019d
 int id scrollable 0x7f08019e
+int id searchViewCTSD 0x7f08026b
+int id searchViewPH 0x7f08026c
 int id search_badge 0x7f08019f
 int id search_bar 0x7f0801a0
 int id search_button 0x7f0801a1
@@ -3652,6 +3653,7 @@ int id textSpacerNoButtons 0x7f0801e4
 int id textSpacerNoTitle 0x7f0801e5
 int id textStart 0x7f0801e6
 int id textTop 0x7f0801e7
+int id textView 0x7f08026d
 int id text_input_end_icon 0x7f0801e8
 int id text_input_error_icon 0x7f0801e9
 int id text_input_start_icon 0x7f0801ea
@@ -3665,6 +3667,8 @@ int id tilConfirmPassword 0x7f0801f1
 int id tilEmail 0x7f0801f2
 int id tilMaThietBi 0x7f0801f3
 int id tilMatKhau 0x7f0801f4
+int id tilNewPassword 0x7f08026e
+int id tilOldPassword 0x7f08026f
 int id tilPassword 0x7f0801f5
 int id tilPhone 0x7f0801f6
 int id tilSoLuong 0x7f0801f7
