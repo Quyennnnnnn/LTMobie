@@ -3229,14 +3229,12 @@ int id btnDelete 0x7f080067
 int id btnEdit 0x7f080068
 int id btnLoaiThietBi 0x7f080069
 int id btnLogin 0x7f08006a
-int id btnLogout 0x7f08006b
 int id btnMenu 0x7f08006c
 int id btnNhanVien 0x7f08006d
 int id btnPhongHoc 0x7f08006e
 int id btnRegister 0x7f08006f
 int id btnSave 0x7f080070
 int id btnSaveCTSD 0x7f080247
-int id btnSettings 0x7f080071
 int id btnThietBi 0x7f080072
 int id btnThongKe 0x7f080073
 int id buttonPanel 0x7f080074
@@ -3597,6 +3595,7 @@ int id special_effects_controller_view_tag 0x7f0801bc
 int id spinnerLoaiThietBi 0x7f0801bd
 int id spinnerPhongHocCTSD 0x7f080254
 int id spinnerThietBiCTSD 0x7f080255
+int id spinnerTrangThaiCTSD 0x7f08025b
 int id spline 0x7f0801be
 int id split_action_bar 0x7f0801bf
 int id spread 0x7f0801c0
@@ -3684,6 +3683,7 @@ int id tvLoaiThietBi 0x7f080236
 int id tvMaLoaiThietBi 0x7f08020f
 int id tvMaPhongHoc 0x7f080257
 int id tvMaThietBi 0x7f080210
+int id tvNgaySuDungCTSD 0x7f08025c
 int id tvPhongHocCTSD 0x7f080258
 int id tvSoLuong 0x7f080211
 int id tvTenLoaiThietBi 0x7f080212
@@ -3692,6 +3692,7 @@ int id tvTenThietBi 0x7f080213
 int id tvThietBiCTSD 0x7f08025a
 int id tvTinhTrang 0x7f080237
 int id tvTitle 0x7f080214
+int id tvTrangThaiCTSD 0x7f08025d
 int id tvXuatXu 0x7f080238
 int id txtDangKy 0x7f080215
 int id txtQuenMK 0x7f080216

@@ -71,7 +71,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewThietBi"
         android:layout_width="match_parent"
-        android:background="#704AB3"
+
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:padding="8dp"

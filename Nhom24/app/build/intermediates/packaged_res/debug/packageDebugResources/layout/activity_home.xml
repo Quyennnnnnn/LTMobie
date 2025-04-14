@@ -250,39 +250,7 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- Footer -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:background="@drawable/gradient_background"
-            android:elevation="8dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSettings"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                android:text="Cài đặt"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="8dp"
-                android:backgroundTint="#3F51B5"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogout"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="Đăng xuất"
-                android:textSize="16sp"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="8dp"
-                android:backgroundTint="#F44336"/>
-        </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <!-- Navigation Drawer -->

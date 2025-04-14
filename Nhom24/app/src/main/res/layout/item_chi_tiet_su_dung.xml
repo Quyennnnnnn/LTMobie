@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="#47169D"
         android:padding="16dp">
 
         <LinearLayout
@@ -25,31 +26,48 @@
                 android:id="@+id/tvPhongHocCTSD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#4A148C"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvThietBiCTSD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#212121"
+                android:textColor="@color/white"
                 android:textSize="16sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvNgaySuDungCTSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvTrangThaiCTSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
                 android:layout_marginTop="4dp" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/ivEditCTSD"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:src="@android:drawable/ic_menu_edit"
-            android:tint="#4A148C"
+
+            android:tint="@color/black"
             android:layout_marginEnd="16dp" />
 
         <ImageView
             android:id="@+id/ivDeleteCTSD"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@android:drawable/ic_delete"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_delete"
             android:tint="#D32F2F" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

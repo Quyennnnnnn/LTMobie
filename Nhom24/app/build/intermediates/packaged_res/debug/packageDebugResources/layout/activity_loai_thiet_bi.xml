@@ -75,7 +75,7 @@
         android:id="@+id/recyclerViewLoaiThietBi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#704AB3"
+
         android:padding="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/item_loai_thiet_bi" />

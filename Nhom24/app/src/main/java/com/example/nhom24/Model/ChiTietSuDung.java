@@ -10,13 +10,16 @@ public class ChiTietSuDung {
     private int phongHocId;
     private int thietBiId;
     private String ngaySuDung;
+    private String trangThai; // Thêm trường trạng thái
 
-    public ChiTietSuDung(int phongHocId, int thietBiId, String ngaySuDung) {
+    public ChiTietSuDung(int phongHocId, int thietBiId, String ngaySuDung, String trangThai) {
         this.phongHocId = phongHocId;
         this.thietBiId = thietBiId;
         this.ngaySuDung = ngaySuDung;
+        this.trangThai = trangThai;
     }
 
+    // Getters và Setters
     public int getId() {
         return id;
     }
@@ -47,5 +50,13 @@ public class ChiTietSuDung {
 
     public void setNgaySuDung(String ngaySuDung) {
         this.ngaySuDung = ngaySuDung;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
     }
 }

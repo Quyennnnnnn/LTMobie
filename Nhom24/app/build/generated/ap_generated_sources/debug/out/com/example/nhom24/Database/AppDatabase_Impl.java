@@ -57,9 +57,9 @@ public final class AppDatabase_Impl extends AppDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `loaithietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `mathietbi` TEXT, `tenthietbi` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `thietbi` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maThietBi` TEXT, `tenThietBi` TEXT, `xuatXu` TEXT, `soLuong` INTEGER NOT NULL, `tinhTrang` TEXT, `imageUrl` TEXT, `loaiThietBiId` INTEGER NOT NULL, FOREIGN KEY(`loaiThietBiId`) REFERENCES `loaithietbi`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
         db.execSQL("CREATE TABLE IF NOT EXISTS `phong_hoc` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `maPhongHoc` TEXT, `tenPhongHoc` TEXT)");
-        db.execSQL("CREATE TABLE IF NOT EXISTS `chi_tiet_su_dung` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phongHocId` INTEGER NOT NULL, `thietBiId` INTEGER NOT NULL, `ngaySuDung` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `chi_tiet_su_dung` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `phongHocId` INTEGER NOT NULL, `thietBiId` INTEGER NOT NULL, `ngaySuDung` TEXT, `trangThai` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9764d9801b5f5295e1f3eda3821feea5')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6d0db63bfbea6186271cc67ea9d1afba')");
       }
 
       @Override
@@ -172,11 +172,12 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoPhongHoc + "\n"
                   + " Found:\n" + _existingPhongHoc);
         }
-        final HashMap<String, TableInfo.Column> _columnsChiTietSuDung = new HashMap<String, TableInfo.Column>(4);
+        final HashMap<String, TableInfo.Column> _columnsChiTietSuDung = new HashMap<String, TableInfo.Column>(5);
         _columnsChiTietSuDung.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsChiTietSuDung.put("phongHocId", new TableInfo.Column("phongHocId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsChiTietSuDung.put("thietBiId", new TableInfo.Column("thietBiId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsChiTietSuDung.put("ngaySuDung", new TableInfo.Column("ngaySuDung", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsChiTietSuDung.put("trangThai", new TableInfo.Column("trangThai", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysChiTietSuDung = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesChiTietSuDung = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoChiTietSuDung = new TableInfo("chi_tiet_su_dung", _columnsChiTietSuDung, _foreignKeysChiTietSuDung, _indicesChiTietSuDung);
@@ -188,7 +189,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "9764d9801b5f5295e1f3eda3821feea5", "098db7e1ac1e7107e89d75c5f4cd37c0");
+    }, "6d0db63bfbea6186271cc67ea9d1afba", "1f973577e3b682e534323883a571813c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

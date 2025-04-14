@@ -42,8 +42,7 @@ public class Home extends AppCompatActivity {
         btnPhongHoc = findViewById(R.id.btnPhongHoc);
         btnNhanVien = findViewById(R.id.btnNhanVien);
         btnThongKe = findViewById(R.id.btnThongKe);
-        btnSettings = findViewById(R.id.btnSettings);
-        btnLogout = findViewById(R.id.btnLogout);
+
         drawerLayout = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -92,24 +91,6 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(Home.this, ThongKeActivity.class));
             }
         });
-
-        // Xử lý sự kiện cho Footer
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Home.this, SettingsActivity.class));
-            }
-        });
-
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Quay lại màn hình đăng nhập và xóa trạng thái đăng nhập nếu cần
-                startActivity(new Intent(Home.this, DangNhap.class));
-                finish();
-            }
-        });
-
 
 
         // Xử lý sự kiện nhấn icon menu

@@ -18,77 +18,84 @@ import com.example.nhom24.R;
 import java.util.List;
 
 public class ChiTietSuDungAdapter extends RecyclerView.Adapter<ChiTietSuDungAdapter.ChiTietSuDungViewHolder> {
-    private Context context;
-    private List<ChiTietSuDung> listChiTietSuDung;
-    private List<PhongHoc> listPhongHoc;
-    private List<ThietBi> listThietBi;
-    private OnItemClickListener listener;
+    private Context contextCTSD;
+    private List<ChiTietSuDung> listChiTietSuDungCTSD;
+    private List<PhongHoc> listPhongHocCTSD;
+    private List<ThietBi> listThietBiCTSD;
+    private OnItemClickListener listenerCTSD;
 
     public interface OnItemClickListener {
         void onEditClick(ChiTietSuDung chiTietSuDung);
+
         void onDeleteClick(ChiTietSuDung chiTietSuDung);
     }
 
     public ChiTietSuDungAdapter(Context context, List<ChiTietSuDung> listChiTietSuDung, List<PhongHoc> listPhongHoc, List<ThietBi> listThietBi, OnItemClickListener listener) {
-        this.context = context;
-        this.listChiTietSuDung = listChiTietSuDung;
-        this.listPhongHoc = listPhongHoc;
-        this.listThietBi = listThietBi;
-        this.listener = listener;
+        this.contextCTSD = context;
+        this.listChiTietSuDungCTSD = listChiTietSuDung;
+        this.listPhongHocCTSD = listPhongHoc;
+        this.listThietBiCTSD = listThietBi;
+        this.listenerCTSD = listener;
     }
 
     @NonNull
     @Override
     public ChiTietSuDungViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_chi_tiet_su_dung, parent, false);
+        View view = LayoutInflater.from(contextCTSD).inflate(R.layout.item_chi_tiet_su_dung, parent, false);
         return new ChiTietSuDungViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ChiTietSuDungViewHolder holder, int position) {
-        ChiTietSuDung chiTietSuDung = listChiTietSuDung.get(position);
+        ChiTietSuDung chiTietSuDung = listChiTietSuDungCTSD.get(position);
 
+        // Tìm tên phòng học
         String tenPhongHoc = "";
-        for (PhongHoc ph : listPhongHoc) {
+        for (PhongHoc ph : listPhongHocCTSD) {
             if (ph.getId() == chiTietSuDung.getPhongHocId()) {
                 tenPhongHoc = ph.getTenPhongHoc();
                 break;
             }
         }
 
+        // Tìm tên thiết bị
         String tenThietBi = "";
-        for (ThietBi tb : listThietBi) {
+        for (ThietBi tb : listThietBiCTSD) {
             if (tb.getId() == chiTietSuDung.getThietBiId()) {
                 tenThietBi = tb.getTenThietBi();
                 break;
             }
         }
 
-        holder.tvPhongHocCTSD.setText("(" + tenPhongHoc + ")");
-        holder.tvThietBiCTSD.setText(tenThietBi);
+        holder.tvPhongHocCTSD.setText("Phòng học: " + tenPhongHoc);
+        holder.tvThietBiCTSD.setText("Thiết bị: " + tenThietBi);
+        holder.tvNgaySuDungCTSD.setText("Ngày sử dụng: " + chiTietSuDung.getNgaySuDung());
+        holder.tvTrangThaiCTSD.setText("Trạng thái: " + chiTietSuDung.getTrangThai());
 
-        holder.ivEditCTSD.setOnClickListener(v -> listener.onEditClick(chiTietSuDung));
-        holder.ivDeleteCTSD.setOnClickListener(v -> listener.onDeleteClick(chiTietSuDung));
+        holder.ivEditCTSD.setOnClickListener(v -> listenerCTSD.onEditClick(chiTietSuDung));
+        holder.ivDeleteCTSD.setOnClickListener(v -> listenerCTSD.onDeleteClick(chiTietSuDung));
     }
 
     @Override
     public int getItemCount() {
-        return listChiTietSuDung.size();
+        return listChiTietSuDungCTSD.size();
     }
 
     public void updateListCTSD(List<ChiTietSuDung> newList) {
-        this.listChiTietSuDung = newList;
+        this.listChiTietSuDungCTSD = newList;
         notifyDataSetChanged();
     }
 
     static class ChiTietSuDungViewHolder extends RecyclerView.ViewHolder {
-        TextView tvPhongHocCTSD, tvThietBiCTSD;
+        TextView tvPhongHocCTSD, tvThietBiCTSD, tvNgaySuDungCTSD, tvTrangThaiCTSD;
         ImageView ivEditCTSD, ivDeleteCTSD;
 
         public ChiTietSuDungViewHolder(@NonNull View itemView) {
             super(itemView);
             tvPhongHocCTSD = itemView.findViewById(R.id.tvPhongHocCTSD);
             tvThietBiCTSD = itemView.findViewById(R.id.tvThietBiCTSD);
+            tvNgaySuDungCTSD = itemView.findViewById(R.id.tvNgaySuDungCTSD);
+            tvTrangThaiCTSD = itemView.findViewById(R.id.tvTrangThaiCTSD);
             ivEditCTSD = itemView.findViewById(R.id.ivEditCTSD);
             ivDeleteCTSD = itemView.findViewById(R.id.ivDeleteCTSD);
         }

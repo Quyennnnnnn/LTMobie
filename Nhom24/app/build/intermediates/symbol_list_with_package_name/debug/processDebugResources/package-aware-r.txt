@@ -3230,14 +3230,12 @@ id btnDelete
 id btnEdit
 id btnLoaiThietBi
 id btnLogin
-id btnLogout
 id btnMenu
 id btnNhanVien
 id btnPhongHoc
 id btnRegister
 id btnSave
 id btnSaveCTSD
-id btnSettings
 id btnThietBi
 id btnThongKe
 id buttonPanel
@@ -3598,6 +3596,7 @@ id special_effects_controller_view_tag
 id spinnerLoaiThietBi
 id spinnerPhongHocCTSD
 id spinnerThietBiCTSD
+id spinnerTrangThaiCTSD
 id spline
 id split_action_bar
 id spread
@@ -3685,6 +3684,7 @@ id tvLoaiThietBi
 id tvMaLoaiThietBi
 id tvMaPhongHoc
 id tvMaThietBi
+id tvNgaySuDungCTSD
 id tvPhongHocCTSD
 id tvSoLuong
 id tvTenLoaiThietBi
@@ -3693,6 +3693,7 @@ id tvTenThietBi
 id tvThietBiCTSD
 id tvTinhTrang
 id tvTitle
+id tvTrangThaiCTSD
 id tvXuatXu
 id txtDangKy
 id txtQuenMK
